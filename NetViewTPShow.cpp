@@ -289,6 +289,7 @@ DWORD WINAPI ThreadSendTP_10F21 (PVOID pParam) //»ñÈ¡ÍØÆËÍ¼CKQ2017
 				break;
 			}
 		}
+		//AfxMessageBox(strAllTPdata);
 		pView->SetTPdataToAccess_10F21(strAllTPdata);
 		pView->GetPointCoordinate();
 		pView->m_DlgTongJiNode.InsertItemToTreeList(_T("TPShow"));
@@ -1333,7 +1334,7 @@ void CNetViewTPShow::SetTPdataToAccess_10F21(CString strTPdata)
 		}
 //--------------------------------------------------------------
 
-		strTPdata = strTPdata.Mid(28);
+		strTPdata = strTPdata.Mid(22);
 	}
 //--------------CSV ±£´æ----------------------------------------
 	if (m_bSave)
