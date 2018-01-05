@@ -108,12 +108,12 @@ DWORD WINAPI ThreadSendTP_10F21 (PVOID pParam) //获取拓扑图CKQ2017
 	INT8U ack = 0 , u8SendAFN = 0 ,AddrBuf[7] , u8ReadCount = 0;
 	INT16U SendDatalen = 0 ,temp16 = 0;
 	//CString strAllTPdata = _T("");
-	    sPartQGDW376_2CreatFrame ptSendQGDW376_2,sQGDW376_2HostFrame;
-		sPartQGDW376_2DeCodeFrame ptRecvQGDW376_2,sRecv376_2HostFrame;
+
 		//sPartCKQ2017CreatFrame ptSendCKQ2017;
 	 //   sPartCKQ2017DeCodeFrame ptDeCodeCKQ2017;
 		while(pView->m_bBreak)
 		{
+
 			if (pView->m_bAutoUpdata == true)
 			{
 				if (pView->m_nUpdataTime == 0)
@@ -125,6 +125,8 @@ DWORD WINAPI ThreadSendTP_10F21 (PVOID pParam) //获取拓扑图CKQ2017
 					AfxMessageBox(_T("请先打开串口！"));
 					continue;
 				}
+					    sPartQGDW376_2CreatFrame ptSendQGDW376_2,sQGDW376_2HostFrame;
+		sPartQGDW376_2DeCodeFrame ptRecvQGDW376_2,sRecv376_2HostFrame;
 				//if (pMain->m_strMAddress == "")
 				//{
 				//	AfxMessageBox(_T("请先连接CCO！"));
@@ -281,7 +283,7 @@ DWORD WINAPI ThreadSendTP_10F21 (PVOID pParam) //获取拓扑图CKQ2017
 			switch(ack)
 			{
 			case 0x00://成功
-				strAllTPdata += pView->m_tools._buf16tostr16(&pView->m_ptRecvQGDW376_2.s_RcvDataBuf[5] , pView->m_ptRecvQGDW376_2.s_RcvDataLen -5);
+				strAllTPdata += pView->m_tools._buf16tostr16(&ptRecvQGDW376_2.s_RcvDataBuf[5] , ptRecvQGDW376_2.s_RcvDataLen -5);
 				break;
 			default:
 				break;
@@ -1297,10 +1299,18 @@ void CNetViewTPShow::SetTPdataToAccess_10F21(CString strTPdata)
 		strlistData[2] = tools._str16tostr10(tools._strDaoxu(strPTEI));
 
 		strRole = strTPdata.Mid(20 , 2);
-		strlistData[3] = tools._str16tostr10(strRole.Mid(0 ,1));
+		CString str;
+		if(tools._str16tostr10(strRole.Mid(0 ,1))=="4"){
+			str.Format(_T("%d"),2); 
+		}
+		else if(tools._str16tostr10(strRole.Mid(0 ,1))=="2"){
+		    str.Format(_T("%d"),4); 
+		}
+		strlistData[3] = tools._str16tostr10(str);
 
-		strlistData[4] = tools._str16tostr10(strRole.Mid(1 ,1));
-
+		strLayer= tools._str16tostr10(strRole.Mid(1 ,1));
+		strLayer.Format(_T("%d"),_ttoi(strLayer)+1); 
+		strlistData[4] = tools._str16tostr10(strLayer);//路由层级
 		strlistData[5] = "99";
 
 
