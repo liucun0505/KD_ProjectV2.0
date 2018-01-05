@@ -2,6 +2,7 @@
 //
 
 #include "stdafx.h"
+#include "MyFunLib.h"
 #include "KD_Project.h"
 #include "NetViewTPShow.h"
 #include "KD_ProjectDoc.h"
@@ -246,16 +247,50 @@ DWORD WINAPI ThreadSendTP (PVOID pParam) //获取拓扑图CKQ2017
 //***********************************************/////
 
 ////////////////////10F21方式的网络拓扑  不接抄控器 串口//////////////////////////////
-INT16U vSrcBp;
-INT16U vSrcCnt;
-INT8U tmpbuf[200];
-//Hex16ToBuf2(vSrcBp+1,&tmpbuf[0]);//起始序号
-//Hex16ToBuf2(vSrcCnt,&tmpbuf[2]);//个数
-tmpbuf[0]=0x01;
-tmpbuf[1]=0x00;
-tmpbuf[2]=0x01;
-ack =gSimJzq.HostSendRcv376_2Buf(0x10,F21,tmpbuf,3,ptSendQGDW376_2,ptRecvQGDW376_2);
-break;
+		INT16U temp16_Node = 0 , u16Numb = 0;
+		INT16U u16BeginNumb_Node = 1;
+		INT8U u8ReadCount_Node = 0 , n = 0 , temp8 = 0;
+		CString strAllTPdata = _T("");
+		ack = gSimJzq.HostSendRcv376_2NoBuf(0x10,F1,sQGDW376_2HostFrame,sRecv376_2HostFrame,1);
+		if(ack == DACK_SUCESS)
+		{
+			ack = DACK_FAILURE; 
+			if((sRecv376_2HostFrame.s_RcvDataLen ==4))
+			{
+				ack = DACK_SUCESS;
+				temp16_Node= Buf2ToHex16(sRecv376_2HostFrame.s_RcvDataBuf);
+			}
+		}
+		while(temp16_Node){
+
+			u16BeginNumb_Node += u8ReadCount_Node;
+			if (temp16_Node >10)
+			{
+				u8ReadCount_Node = 10;
+			}
+			else
+			{
+				u8ReadCount_Node = temp16_Node;
+			}
+			temp16_Node -= u8ReadCount_Node;
+			SendDatalen = 3;
+			SendDatabuf[0] = (INT8U)u16BeginNumb_Node;
+			SendDatabuf[1] = (INT8U)(u16BeginNumb_Node>>8);
+			SendDatabuf[2] = u8ReadCount_Node;
+			ack =gSimJzq.HostSendRcv376_2Buf(0x10,F21,SendDatabuf,SendDatalen,ptSendQGDW376_2,ptRecvQGDW376_2);
+			switch(ack)
+			{
+			case 0x00://成功
+				strAllTPdata += pView->m_tools._buf16tostr16(&pView->m_ptRecvQGDW376_2.s_RcvDataBuf[5] , pView->m_ptRecvQGDW376_2.s_RcvDataLen -5);
+				break;
+			default:
+				break;
+			}
+		}
+		pView->SetTPdataToAccess_10F21(strAllTPdata);
+		pView->GetPointCoordinate();
+		pView->m_DlgTongJiNode.InsertItemToTreeList(_T("TPShow"));
+
 
 ////////////////////10F21方式的网络拓扑  不接抄控器 串口//////////////////////////////
 
@@ -905,7 +940,108 @@ void CNetViewTPShow::SetTPdataToAccess(CString strTPdata)
 //--------------------------------------------------------------
 
 }
+void CNetViewTPShow::SetTPdataToAccess_10F21(CString strTPdata)
+{
+	CMainFrame* pMain= (CMainFrame*)AfxGetApp()->GetMainWnd();
+	INT8U SucceBuf[3];
+	INT16U temp16 = 0;
+	CString  strMAC ,strTEI ,strPTEI, strRole , strLayer , strSuccess;
+	CTools tools;
+	CString strlistName[6] = {_T("TP_MAC") ,_T("TP_TEI") ,_T("TP_PTEI") ,_T("TP_ROLE") ,_T("TP_TIER")  ,_T("TP_READSUCCESS")};
+	CString strlistData[6];
+	CTime timeNow = CTime::GetCurrentTime();
+	CString strTime = timeNow.Format("%Y%m%d%H%M%S") , strName , strData;
+	
+	char szANSIString[5000]; 
+	FILE* file_tpmap;
+	CString strCSVTime = timeNow.Format("%Y%m%d%H%M%S");  //CSV 保存
 
+	if (m_bSave)
+	{
+		CString strNewlistName[6] = {_T("TP_MAC TEXT") ,_T("TP_TEI TEXT") ,_T("TP_PTEI TEXT") ,_T("TP_ROLE TEXT") ,_T("TP_TIER TEXT")  ,_T("TP_READSUCCESS TEXT")};
+		strName = _T("HISTTPNAME");
+		strData = strTime.Mid(2);
+		m_access.AddDataToTable(_T(".\\配置文件\\HistTPShow.accdb") , _T("HISTTPNAME") , &strName , &strData ,1);
+		m_access.CreatTable(_T(".\\配置文件\\HistTPShow.accdb") ,strData ,strNewlistName ,6);
+
+//--------------CSV 保存----------------------------------------
+		strCSVTime = _T(".\\日志\\TOPMap") + strCSVTime + _T(".csv");
+		int len =WideCharToMultiByte(CP_ACP,0,strCSVTime,strCSVTime.GetLength(),NULL,0,NULL,NULL);
+		char * pFileName = new char[len+1];
+		
+		WideCharToMultiByte(CP_ACP,0,strCSVTime,strCSVTime.GetLength(),pFileName,len,NULL,NULL);
+		pFileName[len+1] ='\0';
+		
+		file_tpmap=fopen(pFileName,"r");
+		if  ( file_tpmap == NULL )
+		{
+			file_tpmap=fopen(pFileName,"a+");
+		}
+		else
+		{
+			fclose(file_tpmap); 
+			file_tpmap=fopen(pFileName,"a+");
+		} 
+		CString strTopLine = _T("        TP_MAC,TP_TEI,TP_PTEI,TP_ROLE,TP_TIER,TP_READSUCCESS\n");
+		WideCharToMultiByte(CP_ACP,WC_COMPOSITECHECK,strTopLine,-1,szANSIString,sizeof(szANSIString),NULL,NULL);
+		fwrite(szANSIString,wcslen(strTopLine),1,file_tpmap);
+//--------------------------------------------------------------
+	}
+	int nNumb = strTPdata.GetLength()/22;
+	//m_access.DelectDataFromTable(_T(".\\配置文件\\13762Data.accdb"),_T("TPShow"),_T(""));
+	m_access.DelectDataFromTable(pMain->m_PeiZhi_db,_T("TPShow"),_T(""));
+	for(int n = 0 ; n < nNumb ; n++)
+	{
+		
+		strMAC = strTPdata.Mid(0 , 12);
+		strlistData[0] = tools._strDaoxu(strMAC);
+
+		strTEI = strTPdata.Mid(12 , 4);
+		strlistData[1] = tools._str16tostr10(tools._strDaoxu(strTEI));
+
+		strPTEI = strTPdata.Mid(16 , 4);
+		strlistData[2] = tools._str16tostr10(tools._strDaoxu(strPTEI));
+
+		strRole = strTPdata.Mid(20 , 2);
+		strlistData[3] = tools._str16tostr10(strRole.Mid(0 ,1));
+
+		strlistData[4] = tools._str16tostr10(strRole.Mid(1 ,1));
+
+		strlistData[5] = "99";
+
+
+		if (strlistData[0].Mid(0,10) != "0102030405")
+		{
+			m_access.AddDataToTable(pMain->m_PeiZhi_db,_T("TPShow"),strlistName , strlistData ,6);
+			//m_access.AddDataToTable(_T(".\\配置文件\\13762Data.accdb"),_T("TPShow"),strlistName, strlistData ,6);
+		}
+
+		if (m_bSave)
+		{
+			m_access.AddDataToTable(_T(".\\配置文件\\HistTPShow.accdb") ,strData ,strlistName ,strlistData ,6);
+		}
+//--------------CSV 保存----------------------------------------
+		if (m_bSave)
+		{
+			CString strTopLine = strlistData[0] + _T(",") + strlistData[1] + _T(",") + strlistData[2] + _T(",") + strlistData[3] + _T(",") + strlistData[4] + _T(",") + strlistData[5] + _T("\n");
+			WideCharToMultiByte(CP_ACP,WC_COMPOSITECHECK,strTopLine,-1,szANSIString,sizeof(szANSIString),NULL,NULL);
+			fwrite(szANSIString,wcslen(strTopLine),1,file_tpmap);
+		}
+//--------------------------------------------------------------
+
+		strTPdata = strTPdata.Mid(28);
+	}
+//--------------CSV 保存----------------------------------------
+	if (m_bSave)
+	{
+		if  ( file_tpmap != NULL )
+		{
+			fclose(file_tpmap);
+		}
+	}
+//--------------------------------------------------------------
+
+}
 //刷新拓扑图
 void CNetViewTPShow::OnRbtpUpdata()
 {

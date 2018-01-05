@@ -82,6 +82,7 @@ public:
 	float m_cRW;//图像右边空余宽度
 	float m_fFont;
 	void SetTPdataToAccess(CString strTPdata);
+	void SetTPdataToAccess_10F21(CString strTPdata);
 	void GetPointCoordinate(CString strTableName = _T("TPShow"));//获取节点坐标
 	sPartQGDW376_2CreatFrame m_ptSendQGDW376_2;
 	sPartQGDW376_2DeCodeFrame m_ptRecvQGDW376_2;
