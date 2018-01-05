@@ -109,7 +109,6 @@ DWORD WINAPI ThreadSendTP (PVOID pParam) //获取拓扑图CKQ2017
 	//CString strAllTPdata = _T("");
 	    sPartQGDW376_2CreatFrame ptSendQGDW376_2,sQGDW376_2HostFrame;
 		sPartQGDW376_2DeCodeFrame ptRecvQGDW376_2,sRecv376_2HostFrame;
-
 		//sPartCKQ2017CreatFrame ptSendCKQ2017;
 	 //   sPartCKQ2017DeCodeFrame ptDeCodeCKQ2017;
 		while(pView->m_bBreak)
@@ -148,103 +147,118 @@ DWORD WINAPI ThreadSendTP (PVOID pParam) //获取拓扑图CKQ2017
 
 
 //********************************************************************//
-				sPartCKQ2017CreatFrame ptSendCKQ2017;
-	            
-				ptSendCKQ2017.TYPE=0x07;
-		        ptSendCKQ2017.s_SendDataBuf=0;
-		        ptSendCKQ2017.s_SendDataLen=0;
-				ack =pView->gCKQ2017.CodeCKQ2017Frame(ptSendCKQ2017);
-				if(ack == DACK_SUCESS)
-				{
-						pView->gCKQ2017.SendCKQ2017ToCom(ptSendCKQ2017);
-						CString strAllTPdata = _T("");
-						while(true){
-							sPartCKQ2017DeCodeFrame ptDeCodeCKQ2017;
-							//ptDeCodeCKQ2017.s_RcvDataLen=0;
-							ack = pView->gCKQ2017.WaitCKQ2017AckTYPE(10000 , 20 ,ptSendCKQ2017,ptDeCodeCKQ2017);
-							if(ack == DACK_SUCESS)
-							{
-								int num=ptDeCodeCKQ2017.s_RcvDataBuf[2]*256+ptDeCodeCKQ2017.s_RcvDataBuf[3];
-								strAllTPdata += pView->m_tools._buf16tostr16(&ptDeCodeCKQ2017.s_RcvDataBuf[4] , ptDeCodeCKQ2017.s_RcvDataLen -4);
-								if(ptDeCodeCKQ2017.s_RcvDataBuf[1]==1){
-								   pView->SetTPdataToAccess(strAllTPdata);
-				                   pView->GetPointCoordinate();
-								   break;
+				//sPartCKQ2017CreatFrame ptSendCKQ2017;
+	   //         
+				//ptSendCKQ2017.TYPE=0x07;
+		  //      ptSendCKQ2017.s_SendDataBuf=0;
+		  //      ptSendCKQ2017.s_SendDataLen=0;
+				//ack =pView->gCKQ2017.CodeCKQ2017Frame(ptSendCKQ2017);
+				//if(ack == DACK_SUCESS)
+				//{
+				//		pView->gCKQ2017.SendCKQ2017ToCom(ptSendCKQ2017);
+				//		CString strAllTPdata = _T("");
+				//		while(true){
+				//			sPartCKQ2017DeCodeFrame ptDeCodeCKQ2017;
+				//			//ptDeCodeCKQ2017.s_RcvDataLen=0;
+				//			ack = pView->gCKQ2017.WaitCKQ2017AckTYPE(10000 , 20 ,ptSendCKQ2017,ptDeCodeCKQ2017);
+				//			if(ack == DACK_SUCESS)
+				//			{
+				//				int num=ptDeCodeCKQ2017.s_RcvDataBuf[2]*256+ptDeCodeCKQ2017.s_RcvDataBuf[3];
+				//				strAllTPdata += pView->m_tools._buf16tostr16(&ptDeCodeCKQ2017.s_RcvDataBuf[4] , ptDeCodeCKQ2017.s_RcvDataLen -4);
+				//				if(ptDeCodeCKQ2017.s_RcvDataBuf[1]==1){
+				//				   pView->SetTPdataToAccess(strAllTPdata);
+				//                   pView->GetPointCoordinate();
+				//				   break;
 
-								}
-							}
-							else{
-                                break;
-							}
-						}
-						pView->m_DlgTongJiNode.InsertItemToTreeList(_T("TPShow"));//170912120240_T("TPShow")
+				//				}
+				//			}
+				//			else{
+    //                            break;
+				//			}
+				//		}
+				//		pView->m_DlgTongJiNode.InsertItemToTreeList(_T("TPShow"));//170912120240_T("TPShow")
 
 
-					//						//////////////////////////////
-					//INT16U u16BeginNumb_Node = 1;
-					//INT8U u8ReadCount_Node = 0 , n = 0 , temp8 = 0;
-					//INT16U temp16_Node = 0 , u16Numb = 0;
-					//CString strMAC = _T("") , strWhere = _T("");
-					//CString strNumb , strSTAMsg[1024] , strlist[10];
-					//int nlistNumb = 0 , nlistUN = 0 , nInNetNumb = 0 , nUnNetNumb = 0 , nLostNumb = 0 , nUnWhiteNumb = 0;
-					//
-					////pView->m_DlgTongJiNode.OnlineList.DeleteAllItems();
-					////pView->m_DlgTongJiNode.LostList.DeleteAllItems();
-					//
-					//pView->m_access.DelectDataFromTable(pMain->m_PeiZhi_db , _T("TPMODERR") , _T(""));
-	    //            pView->m_access.SetCopyTable(pMain->m_PeiZhi_db, _T("TPShow") , _T("TPMODERR"));
-	    //            pView->m_tools._str16tobuf16( pMain->m_strMAddress , AddrBuf , temp16_Node , true);
-					//ack = gSimJzq.HostSendRcv376_2F0F8(AddrBuf , 0x10 , F1 , SendDatabuf , SendDatalen , ptSendQGDW376_2 , ptRecvQGDW376_2 , ptRecvQGDW376_2);
-					//if (ack != 0) return 0;
-					//temp16_Node = ptRecvQGDW376_2.s_RcvDataBuf[1] << 8 | ptRecvQGDW376_2.s_RcvDataBuf[0];
-					//while(temp16_Node)
-					//{
-					//	u16BeginNumb_Node += u8ReadCount_Node;
-					//	if (temp16_Node >10)
-					//	{
-					//		u8ReadCount_Node = 10;
-					//	}
-					//	else
-					//	{
-					//		u8ReadCount_Node = temp16_Node;
-					//	}
-					//	temp16_Node -= u8ReadCount_Node;
-					//	SendDatalen = 3;
-					//	SendDatabuf[0] = (INT8U)u16BeginNumb_Node;
-					//	SendDatabuf[1] = (INT8U)(u16BeginNumb_Node>>8);
-					//	SendDatabuf[2] = u8ReadCount_Node;
-					//	ack = gSimJzq.HostSendRcv376_2F0F8(AddrBuf , 0x10 , F2 , SendDatabuf , SendDatalen , ptSendQGDW376_2, ptRecvQGDW376_2 , ptRecvQGDW376_2);
-					//	if (ack != 0) return 0;
+				//	//						//////////////////////////////
+				//	//INT16U u16BeginNumb_Node = 1;
+				//	//INT8U u8ReadCount_Node = 0 , n = 0 , temp8 = 0;
+				//	//INT16U temp16_Node = 0 , u16Numb = 0;
+				//	//CString strMAC = _T("") , strWhere = _T("");
+				//	//CString strNumb , strSTAMsg[1024] , strlist[10];
+				//	//int nlistNumb = 0 , nlistUN = 0 , nInNetNumb = 0 , nUnNetNumb = 0 , nLostNumb = 0 , nUnWhiteNumb = 0;
+				//	//
+				//	////pView->m_DlgTongJiNode.OnlineList.DeleteAllItems();
+				//	////pView->m_DlgTongJiNode.LostList.DeleteAllItems();
+				//	//
+				//	//pView->m_access.DelectDataFromTable(pMain->m_PeiZhi_db , _T("TPMODERR") , _T(""));
+	   // //            pView->m_access.SetCopyTable(pMain->m_PeiZhi_db, _T("TPShow") , _T("TPMODERR"));
+	   // //            pView->m_tools._str16tobuf16( pMain->m_strMAddress , AddrBuf , temp16_Node , true);
+				//	//ack = gSimJzq.HostSendRcv376_2F0F8(AddrBuf , 0x10 , F1 , SendDatabuf , SendDatalen , ptSendQGDW376_2 , ptRecvQGDW376_2 , ptRecvQGDW376_2);
+				//	//if (ack != 0) return 0;
+				//	//temp16_Node = ptRecvQGDW376_2.s_RcvDataBuf[1] << 8 | ptRecvQGDW376_2.s_RcvDataBuf[0];
+				//	//while(temp16_Node)
+				//	//{
+				//	//	u16BeginNumb_Node += u8ReadCount_Node;
+				//	//	if (temp16_Node >10)
+				//	//	{
+				//	//		u8ReadCount_Node = 10;
+				//	//	}
+				//	//	else
+				//	//	{
+				//	//		u8ReadCount_Node = temp16_Node;
+				//	//	}
+				//	//	temp16_Node -= u8ReadCount_Node;
+				//	//	SendDatalen = 3;
+				//	//	SendDatabuf[0] = (INT8U)u16BeginNumb_Node;
+				//	//	SendDatabuf[1] = (INT8U)(u16BeginNumb_Node>>8);
+				//	//	SendDatabuf[2] = u8ReadCount_Node;
+				//	//	ack = gSimJzq.HostSendRcv376_2F0F8(AddrBuf , 0x10 , F2 , SendDatabuf , SendDatalen , ptSendQGDW376_2, ptRecvQGDW376_2 , ptRecvQGDW376_2);
+				//	//	if (ack != 0) return 0;
 
-					//	temp8 = ptRecvQGDW376_2.s_RcvDataBuf[2];
-					//	for (n = 0; n < temp8; n++)
-					//	{
-					//		strMAC = pView->m_tools._buf16tostr16(&ptRecvQGDW376_2.s_RcvDataBuf[3 + 8 * n] , 6 , false , true);
-					//		strWhere = _T("TP_MAC='") + strMAC + _T("'");
-					//		pView->m_access.SelectDataFromTable(pMain->m_PeiZhi_db, _T("TPMODERR") , _T("TP_TEI,TP_ROLE") , strWhere , strSTAMsg , nlistNumb);
-					//		//pView->m_access.SelectDataFromTable(_T(".\\配置文件\\13762Data.accdb") , _T("TPMODERR") , _T("TP_TEI,TP_ROLE") , strWhere , strSTAMsg , nlistNumb);
-					//		if (nlistNumb == 0)
-					//		{
-					//			nUnNetNumb += 1;
-					//			//pView->InsertItemToList(strMAC , _T("无") , _T("未入网") , _T("") , _T("未知") , _T(""));
+				//	//	temp8 = ptRecvQGDW376_2.s_RcvDataBuf[2];
+				//	//	for (n = 0; n < temp8; n++)
+				//	//	{
+				//	//		strMAC = pView->m_tools._buf16tostr16(&ptRecvQGDW376_2.s_RcvDataBuf[3 + 8 * n] , 6 , false , true);
+				//	//		strWhere = _T("TP_MAC='") + strMAC + _T("'");
+				//	//		pView->m_access.SelectDataFromTable(pMain->m_PeiZhi_db, _T("TPMODERR") , _T("TP_TEI,TP_ROLE") , strWhere , strSTAMsg , nlistNumb);
+				//	//		//pView->m_access.SelectDataFromTable(_T(".\\配置文件\\13762Data.accdb") , _T("TPMODERR") , _T("TP_TEI,TP_ROLE") , strWhere , strSTAMsg , nlistNumb);
+				//	//		if (nlistNumb == 0)
+				//	//		{
+				//	//			nUnNetNumb += 1;
+				//	//			//pView->InsertItemToList(strMAC , _T("无") , _T("未入网") , _T("") , _T("未知") , _T(""));
 
-					//			pView->m_DlgTongJiNode.InsertItemToLostList(strMAC);
-					//		}
-					//		else
-					//		{
-					//			nInNetNumb += 1;
-					//			pView->m_tools.Split(strSTAMsg[0] , _T("$") , strlist , nlistNumb);
-					//			//pView->InsertItemToList(strMAC , strlist[0] , _T("入网") , _T("") , strMAC , strlist[1]);
-					//			pView->m_DlgTongJiNode.InsertItemToOnlineList(strMAC,strlist[0],strMAC, strlist[1]);
-					//			pView->m_access.DelectDataFromTable(pMain->m_PeiZhi_db , _T("TPMODERR") , strWhere);
-					//			//pView->m_access.DelectDataFromTable(_T(".\\配置文件\\13762Data.accdb") , _T("TPMODERR") , strWhere);
-					//		}
-					//	}
-					//}
-					//pView->m_nOnlineNumb[5]=nUnNetNumb;
-				}
+				//	//			pView->m_DlgTongJiNode.InsertItemToLostList(strMAC);
+				//	//		}
+				//	//		else
+				//	//		{
+				//	//			nInNetNumb += 1;
+				//	//			pView->m_tools.Split(strSTAMsg[0] , _T("$") , strlist , nlistNumb);
+				//	//			//pView->InsertItemToList(strMAC , strlist[0] , _T("入网") , _T("") , strMAC , strlist[1]);
+				//	//			pView->m_DlgTongJiNode.InsertItemToOnlineList(strMAC,strlist[0],strMAC, strlist[1]);
+				//	//			pView->m_access.DelectDataFromTable(pMain->m_PeiZhi_db , _T("TPMODERR") , strWhere);
+				//	//			//pView->m_access.DelectDataFromTable(_T(".\\配置文件\\13762Data.accdb") , _T("TPMODERR") , strWhere);
+				//	//		}
+				//	//	}
+				//	//}
+				//	//pView->m_nOnlineNumb[5]=nUnNetNumb;
+				//}
 				
 //***********************************************/////
+
+////////////////////10F21方式的网络拓扑  不接抄控器 串口//////////////////////////////
+INT16U vSrcBp;
+INT16U vSrcCnt;
+INT8U tmpbuf[200];
+//Hex16ToBuf2(vSrcBp+1,&tmpbuf[0]);//起始序号
+//Hex16ToBuf2(vSrcCnt,&tmpbuf[2]);//个数
+tmpbuf[0]=0x01;
+tmpbuf[1]=0x00;
+tmpbuf[2]=0x01;
+ack =gSimJzq.HostSendRcv376_2Buf(0x10,F21,tmpbuf,3,ptSendQGDW376_2,ptRecvQGDW376_2);
+break;
+
+////////////////////10F21方式的网络拓扑  不接抄控器 串口//////////////////////////////
+
 				Sleep(pView->m_nUpdataTime * 2000);
 			}
 			Sleep(200);

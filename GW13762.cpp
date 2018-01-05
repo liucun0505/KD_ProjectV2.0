@@ -354,7 +354,7 @@ sPartQGDW376_2_Head CGW13762::Init376_2UpFrame(TH_IN const INT8U *pSrcAddBuf, TH
 	sPartQGDW376_2_Head  tmpfame;
 	
 	tmpfame.u_con.s_conBit.s_Con_ComMode = DV376_2CON_COM_MODE;
-	tmpfame.u_con.s_conBit.s_Con_DIR = DV376_2CON_DIR_COMMD;
+	tmpfame.u_con.s_conBit.s_Con_DIR = DV376_2CON_PRM_SLAVE;
 	tmpfame.u_con.s_conBit.s_Con_PRM = DV376_2CON_PRM_MASTER;	
 	
 	tmpfame.u_msg.s_UpMsgBit.s_Msg_RouterFlag = 1;		
