@@ -137,11 +137,10 @@ DWORD WINAPI ThreadSendTP_10F21 (PVOID pParam) //获取拓扑图CKQ2017
 					if((sRecv376_2HostFrame.s_RcvDataLen ==4))
 					{
 						ack = DACK_SUCESS;
-						temp16_Node= Buf2ToHex16(sRecv376_2HostFrame.s_RcvDataBuf)+1;
+						temp16_Node= Buf2ToHex16(sRecv376_2HostFrame.s_RcvDataBuf)+1;//加一个CCO
 					}
 				}
 				else{
-					//AfxMessageBox(_T("chuqule"));
 					continue;
 				}
 				while(temp16_Node){
