@@ -137,7 +137,7 @@ DWORD WINAPI ThreadSendTP_10F21 (PVOID pParam) //ªÒ»°Õÿ∆ÀÕºCKQ2017
 					if((sRecv376_2HostFrame.s_RcvDataLen ==4))
 					{
 						ack = DACK_SUCESS;
-						temp16_Node= Buf2ToHex16(sRecv376_2HostFrame.s_RcvDataBuf);
+						temp16_Node= Buf2ToHex16(sRecv376_2HostFrame.s_RcvDataBuf)+1;
 					}
 				}
 				else{

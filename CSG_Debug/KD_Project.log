@@ -1,18 +1,72 @@
-﻿生成启动时间为 18.1.3 16:09:09。
-     1>项目“D:\MyGit\KD_Project1027x -1.2\KD_Project\KD_Project.vcxproj”在节点 2 上(build 个目标)。
+﻿生成启动时间为 18.1.6 15:10:59。
+     1>项目“D:\抄控器2.0程序\KD_ProjectV2.0_180104\KD_ProjectV2.0\KD_Project.vcxproj”在节点 2 上(build 个目标)。
        项目文件包含 ToolsVersion="12.0"。此工具集可能未知或缺失。在这种情况下，通过安装 MSBuild 的正确版本，或许可以解决此问题。否则，该 build 可能已因策略原因而被强制为某个特定 ToolsVersion。将该项目视为其已具有 ToolsVersion="4.0"。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=291333。
      1>InitializeBuildStatus:
          正在创建“CSG_Debug\KD_Project.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
          所有输出均为最新。
-         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _STD_CSG /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MT /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"CSG_Debug\KD_Project.pch" /Fo"CSG_Debug\\" /Fd"CSG_Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt FrameShowWnd.cpp
-         FrameShowWnd.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _STD_CSG /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MT /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"CSG_Debug\KD_Project.pch" /Fo"CSG_Debug\\" /Fd"CSG_Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt NetViewTPShow.cpp
+         NetViewTPShow.cpp
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(156): warning C4244: “=”: 从“INT16U”转换到“INT8U”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(108): warning C4101: “AddrBuf”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(343): warning C4101: “AddrBuf”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(346): warning C4101: “sQGDW376_2HostFrame”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(346): warning C4101: “ptSendQGDW376_2”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(342): warning C4101: “SendDatabuf”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(347): warning C4101: “ptRecvQGDW376_2”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(347): warning C4101: “sRecv376_2HostFrame”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(636): warning C4244: “=”: 从“LONG”转换到“float”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(637): warning C4244: “=”: 从“LONG”转换到“float”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(638): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(638): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(698): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(698): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(699): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(699): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(706): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(706): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(707): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(707): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(708): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(708): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(709): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(709): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(719): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(719): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(719): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(719): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(726): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(750): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(750): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(903): warning C4305: “初始化”: 从“double”到“float”截断
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(943): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(943): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1051): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1054): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1059): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1022): warning C4101: “SucceBuf”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1162): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1165): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1170): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1132): warning C4101: “SucceBuf”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1302): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1302): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1351): warning C4244: “=”: 从“INT16U”转换到“INT8U”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1382): warning C4244: “=”: 从“INT16U”转换到“INT8U”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1328): warning C4101: “ptSendQCSG376_2”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1359): warning C4101: “ptSendQGDW376_2”: 未引用的局部变量
        ResourceCompile:
          所有输出均为最新。
        ManifestResourceCompile:
          所有输出均为最新。
        Link:
-         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\MyGit\KD_Project1027x -1.2\CSG_Debug\KD_Project.exe" /INCREMENTAL /NOLOGO /NODEFAULTLIB:libcmt.lib /MANIFEST /ManifestFile:"CSG_Debug\KD_Project.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\MyGit\KD_Project1027x -1.2\CSG_Debug\KD_Project.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\MyGit\KD_Project1027x -1.2\CSG_Debug\KD_Project.lib" /MACHINE:X86 CSG_Debug\KD_Project.res
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\抄控器2.0程序\KD_ProjectV2.0_180104\CSG_Debug\KD_Project.exe" /INCREMENTAL /NOLOGO /NODEFAULTLIB:libcmt.lib /MANIFEST /ManifestFile:"CSG_Debug\KD_Project.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\抄控器2.0程序\KD_ProjectV2.0_180104\CSG_Debug\KD_Project.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\抄控器2.0程序\KD_ProjectV2.0_180104\CSG_Debug\KD_Project.lib" /MACHINE:X86 CSG_Debug\KD_Project.res
          CSG_Debug\KD_Project.exe.embed.manifest.res
          CSG_Debug\AccessData.obj
          CSG_Debug\AddMacTest.obj
@@ -94,12 +148,12 @@
          所有输出均为最新。
        LinkEmbedManifest:
          所有输出均为最新。
-         KD_Project.vcxproj -> D:\MyGit\KD_Project1027x -1.2\CSG_Debug\KD_Project.exe
+         KD_Project.vcxproj -> D:\抄控器2.0程序\KD_ProjectV2.0_180104\CSG_Debug\KD_Project.exe
        FinalizeBuildStatus:
          正在删除文件“CSG_Debug\KD_Project.unsuccessfulbuild”。
          正在对“CSG_Debug\KD_Project.lastbuildstate”执行 Touch 任务。
-     1>已完成生成项目“D:\MyGit\KD_Project1027x -1.2\KD_Project\KD_Project.vcxproj”(build 个目标)的操作。
+     1>已完成生成项目“D:\抄控器2.0程序\KD_ProjectV2.0_180104\KD_ProjectV2.0\KD_Project.vcxproj”(build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:01.09
+已用时间 00:00:01.12

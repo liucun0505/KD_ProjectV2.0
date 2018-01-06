@@ -1,9 +1,9 @@
-﻿// Created by Microsoft (R) C/C++ Compiler Version 10.00.40219.01 (94cb2468).
+﻿// Created by Microsoft (R) C/C++ Compiler Version 10.00.40219.01 (fa56d346).
 //
-// d:\mygit\kd_project1027x -1.2\kd_project\csg_debug\msado60.tli
+// d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\csg_debug\msado60.tli
 //
 // Wrapper implementations for type library c:\program files\common files\system\ado\msado60.tlb
-// compiler-generated file created 01/02/18 at 16:14:52 - DO NOT EDIT!
+// compiler-generated file created 01/06/18 at 15:08:30 - DO NOT EDIT!
 
 #pragma once
 
