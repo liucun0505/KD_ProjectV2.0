@@ -164,12 +164,24 @@ DWORD WINAPI ThreadSendTP_10F21 (PVOID pParam) //»ñÈ¡ÍØÆËÍ¼CKQ2017
                    if(ack == DACK_SUCESS)
 				   {
 					  strAllTPdata += pView->m_tools._buf16tostr16(&ptRecvQGDW376_2.s_RcvDataBuf[5] , ptRecvQGDW376_2.s_RcvDataLen -5);
+				   
+					  if(ptRecvQGDW376_2.s_RcvDataBuf[4]==0x00&&ptRecvQGDW376_2.s_RcvDataBuf[4]==0x00){
+						  temp16_Node=0;
+						  ack=100;
+					  }
+
 				   }
 				   else{
-                       break;
+                       	  temp16_Node=0;
+						  ack=100;
+						  break;
 				   }
 
 				}
+				if(ack==100){
+					continue;
+				}
+
 				//AfxMessageBox(strAllTPdata);
 				pView->SetTPdataToAccess_10F21(strAllTPdata);
 				pView->GetPointCoordinate();
