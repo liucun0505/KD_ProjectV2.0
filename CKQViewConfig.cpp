@@ -152,9 +152,9 @@ void CCKQViewConfig::OnInitialUpdate()
 	CFormView::OnInitialUpdate();
 	CImage image;  
 	HBITMAP hBmpGroup;
-	image.Load(_T("GroupBackColor.png"));
-	hBmpGroup = image.Detach();
-	m_pictureMap.SetBitmap(hBmpGroup);
+	//image.Load(_T("GroupBackColor.png"));
+	//hBmpGroup = image.Detach();
+	//m_pictureMap.SetBitmap(hBmpGroup);
 	Updata();
 	SetItemEnableF();
 }

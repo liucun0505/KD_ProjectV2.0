@@ -222,11 +222,11 @@ INT8U CSimJzq::HostSendRcv376_2Buf(INT8U vSrcAFN,INT16U vSrcFn,INT8U *vSrcBuf,IN
 		SendHost3762ToCom(sQGDW376_2HostFrame);
 		if(vSrcAckCmp == 0)
 		{
-			ack = Wait3762AckCmpSeq(10000 , 20 ,sQGDW376_2HostFrame,DstDecodeDataFrame);
+			ack = Wait3762AckCmpSeq(5000 , 20 ,sQGDW376_2HostFrame,DstDecodeDataFrame);
 		}
 		else
 		{
-			ack = Wait3762AckCmpAFNFN(10000 , 20 ,sQGDW376_2HostFrame,DstDecodeDataFrame);
+			ack = Wait3762AckCmpAFNFN(5000 , 20 ,sQGDW376_2HostFrame,DstDecodeDataFrame);
 		}
 		if(ack == DACK_SUCESS)
 		{
