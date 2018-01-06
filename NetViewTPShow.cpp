@@ -1119,6 +1119,7 @@ void CNetViewTPShow::SetTPdataToAccess_10F21(CString strTPdata)
 	CMainFrame* pMain= (CMainFrame*)AfxGetApp()->GetMainWnd();
 	INT8U SucceBuf[3];
 	INT16U temp16 = 0;
+			CString str=_T("0");
 	CString  strMAC ,strTEI ,strPTEI, strRole , strLayer , strSuccess;
 	CTools tools;
 	CString strlistName[6] = {_T("TP_MAC") ,_T("TP_TEI") ,_T("TP_PTEI") ,_T("TP_ROLE") ,_T("TP_TIER")  ,_T("TP_READSUCCESS")};
@@ -1177,12 +1178,11 @@ void CNetViewTPShow::SetTPdataToAccess_10F21(CString strTPdata)
 		strlistData[2] = tools._str16tostr10(tools._strDaoxu(strPTEI));
 
 		strRole = strTPdata.Mid(20 , 2);
-		CString str;
 		if(tools._str16tostr10(strRole.Mid(0 ,1))=="4"){
 			str.Format(_T("%d"),2); 
 		}
-		else if(tools._str16tostr10(strRole.Mid(0 ,1))=="2"){
-		    str.Format(_T("%d"),4); 
+		else {
+		    str.Format(_T("%d"),_ttoi(tools._str16tostr10(strRole.Mid(0 ,1)))+3); 
 		}
 		strlistData[3] = tools._str16tostr10(str);
 
