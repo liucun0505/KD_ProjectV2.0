@@ -1184,9 +1184,14 @@ void CNetViewTPShow::SetTPdataToAccess_10F21(CString strTPdata)
 
 		strTEI = strTPdata.Mid(12 , 4);
 		strlistData[1] = tools._str16tostr10(tools._strDaoxu(strTEI));
+		if(strTEI==_T("0100")){
+			strlistData[2]=_T("0000");
+		}
+		else{
 
 		strPTEI = strTPdata.Mid(16 , 4);
 		strlistData[2] = tools._str16tostr10(tools._strDaoxu(strPTEI));
+		}
 
 		strRole = strTPdata.Mid(20 , 2);
 		if(tools._str16tostr10(strRole.Mid(0 ,1))=="4"){
