@@ -13,7 +13,7 @@ public:
 	void InsertItemToTreeList(CString strTableName);
 	void InsertItemToOnlineList(CString strMAC , CString strTEI , CString strAddress , CString strType);
 	void InsertItemToLostList(CString strMAC);
-
+	void MyExpandTree(HTREEITEM hTreeItem);
 	 CFrameWnd *m_pMyFrame;
 	 CSplitterWnd m_cSplitter; 
 	 CImageList m_imageList;

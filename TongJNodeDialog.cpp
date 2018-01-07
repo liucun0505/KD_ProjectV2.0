@@ -257,5 +257,23 @@ void TongJNodeDialog::InsertItemToTreeList(CString strTableName)
 			}
 		}
 
+		HTREEITEM hTreeItem=pView->GetTreeCtrl().GetRootItem();
+		MyExpandTree(hTreeItem);
+
 	}
 }
+void TongJNodeDialog::MyExpandTree(HTREEITEM hTreeItem)  
+{  
+	//hTreeItem=pView->GetTreeCtrl().GetRootItem();
+    if(!pView->GetTreeCtrl().ItemHasChildren(hTreeItem))//如果树控件根节点没有子节点则返回  
+    {  
+        return;  
+    }  
+    HTREEITEM hNextItem = pView->GetTreeCtrl().GetChildItem(hTreeItem);//若树控件的根节点有子节点则获取根节点的子节点  
+    while (hNextItem != NULL)//若有  
+    {  
+        MyExpandTree(hNextItem);//递归，展开子节点下的所有子节点  
+        hNextItem = pView->GetTreeCtrl().GetNextItem(hNextItem, TVGN_NEXT);//获取根节点的下一个子节点  
+    }  
+    pView->GetTreeCtrl().Expand(hTreeItem,TVE_EXPAND);//展开节点  
+} 
