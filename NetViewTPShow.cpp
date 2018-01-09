@@ -186,6 +186,60 @@ DWORD WINAPI ThreadSendTP_10F21 (PVOID pParam) //获取拓扑图CKQ2017
 				pView->GetPointCoordinate();
 				pView->m_DlgTongJiNode.InsertItemToTreeList(_T("TPShow"));
 
+					CString strMAC = _T("") , strWhere = _T("");
+					CString strNumb , strSTAMsg[1024] , strlist[10];
+					int nlistNumb = 0 , nlistUN = 0 , nInNetNumb = 0 , nUnNetNumb = 0 , nLostNumb = 0 , nUnWhiteNumb = 0;
+					pView->m_access.DelectDataFromTable(pMain->m_PeiZhi_db , _T("TPMODERR") , _T(""));
+	                pView->m_access.SetCopyTable(pMain->m_PeiZhi_db, _T("TPShow") , _T("TPMODERR"));
+
+
+					//while(temp16_Node)
+		//			{
+		//				u16BeginNumb_Node += u8ReadCount_Node;
+		//				if (temp16_Node >10)
+		//				{
+		//					u8ReadCount_Node = 10;
+		//				}
+		//				else
+		//				{
+		//					u8ReadCount_Node = temp16_Node;
+		//				}
+		//				temp16_Node -= u8ReadCount_Node;
+		//				SendDatalen = 3;
+		//				SendDatabuf[0] = (INT8U)u16BeginNumb_Node;
+		//				SendDatabuf[1] = (INT8U)(u16BeginNumb_Node>>8);
+		//				SendDatabuf[2] = u8ReadCount_Node;
+		//				ack = gSimJzq.HostSendRcv376_2F0F8(AddrBuf , 0x10 , F2 , SendDatabuf , SendDatalen , ptSendQGDW376_2, ptRecvQGDW376_2 , ptRecvQGDW376_2);
+		//				if (ack != 0) return 0;
+
+		//				temp8 = ptRecvQGDW376_2.s_RcvDataBuf[2];
+		//				for (n = 0; n < temp8; n++)
+		//				{
+		//					strMAC = pView->m_tools._buf16tostr16(&ptRecvQGDW376_2.s_RcvDataBuf[3 + 8 * n] , 6 , false , true);
+		//					strWhere = _T("TP_MAC='") + strMAC + _T("'");
+		//					pView->m_access.SelectDataFromTable(pMain->m_PeiZhi_db, _T("TPMODERR") , _T("TP_TEI,TP_ROLE") , strWhere , strSTAMsg , nlistNumb);
+		//					//pView->m_access.SelectDataFromTable(_T(".\\配置文件\\13762Data.accdb") , _T("TPMODERR") , _T("TP_TEI,TP_ROLE") , strWhere , strSTAMsg , nlistNumb);
+		//					if (nlistNumb == 0)
+		//					{
+		//						nUnNetNumb += 1;
+		//						//pView->InsertItemToList(strMAC , _T("无") , _T("未入网") , _T("") , _T("未知") , _T(""));
+
+		//						pView->m_DlgTongJiNode.InsertItemToLostList(strMAC);
+		//					}
+		//					else
+		//					{
+		//						nInNetNumb += 1;
+		//						pView->m_tools.Split(strSTAMsg[0] , _T("$") , strlist , nlistNumb);
+		//						//pView->InsertItemToList(strMAC , strlist[0] , _T("入网") , _T("") , strMAC , strlist[1]);
+		//						pView->m_DlgTongJiNode.InsertItemToOnlineList(strMAC,strlist[0],strMAC, strlist[1]);
+		//						pView->m_access.DelectDataFromTable(pMain->m_PeiZhi_db , _T("TPMODERR") , strWhere);
+		//						//pView->m_access.DelectDataFromTable(_T(".\\配置文件\\13762Data.accdb") , _T("TPMODERR") , strWhere);
+		//					}
+		//				}
+		//			}
+		//			pView->m_nOnlineNumb[5]=nUnNetNumb;
+
+
 
 ////////////////////10F21方式的网络拓扑  不接抄控器 串口//////////////////////////////
 
@@ -195,67 +249,9 @@ DWORD WINAPI ThreadSendTP_10F21 (PVOID pParam) //获取拓扑图CKQ2017
 		}
 
 
-
-		//sPartQGDW376_2CreatFrame ptSendQGDW376_2;
-		//sPartQGDW376_2DeCodeFrame ptRecvQGDW376_2;
-		//while(pView->m_bBreak)
-		//{
-		//	if (pView->m_bAutoUpdata == true)
-		//	{
-		//		if (pView->m_nUpdataTime == 0)
-		//		{
-		//			pView->m_bAutoUpdata = false;
-		//		}
-		//		if (pMain->m_bConnected != TRUE)
-		//		{
-		//			AfxMessageBox(_T("请先打开串口！"));
-		//			continue;
-		//		}
-		//		//if (pMain->m_strMAddress == "")
-		//		//{
-		//		//	AfxMessageBox(_T("请先连接CCO！"));
-		//		//	continue;
-		//		//}
-		//		u16BeginNumb = 0;
-		//		SendDatalen = 0;
-		//		u8ReadCount = 0;
-		//		strAllTPdata = pMain->m_strMAddress + _T("0100000021000000");
-		//		pView->m_tools._str16tobuf16( pMain->m_strMAddress , AddrBuf , temp16 , true);
-		//		ack = gSimJzq.HostSendRcv376_2F0F8(AddrBuf , 0xF0 , F10 , SendDatabuf , SendDatalen , pView->m_ptSendQGDW376_2 , ptRecvQGDW376_2 , pView->m_ptRecvQGDW376_2);
-		//		switch(ack)
-		//		{
-		//		case 0x00://成功
-		//			temp16 = pView->m_ptRecvQGDW376_2.s_RcvDataBuf[1] << 8 | pView->m_ptRecvQGDW376_2.s_RcvDataBuf[0];
-		//			while(temp16)
-		//			{
-		//				u16BeginNumb += u8ReadCount;
-		//				if (temp16 >20)
-		//				{
-		//					u8ReadCount = 20;
-		//				}
-		//				else
-		//				{
-		//					u8ReadCount = temp16;
-		//				}
-		//				temp16 -= u8ReadCount;
-		//				SendDatalen = 3;
-		//				SendDatabuf[0] = (INT8U)u16BeginNumb;
-		//				SendDatabuf[1] = (INT8U)(u16BeginNumb>>8);
-		//				SendDatabuf[2] = u8ReadCount;
-		//				ack = gSimJzq.HostSendRcv376_2F0F8(AddrBuf , 0xF0 , F9 , SendDatabuf , SendDatalen , pView->m_ptSendQGDW376_2, ptRecvQGDW376_2 , pView->m_ptRecvQGDW376_2);
-		//				switch(ack)
-		//				{
-		//				case 0x00://成功
-		//					strAllTPdata += pView->m_tools._buf16tostr16(&pView->m_ptRecvQGDW376_2.s_RcvDataBuf[5] , pView->m_ptRecvQGDW376_2.s_RcvDataLen -5);
-		//					break;
-		//				}
-		//			}
-		//			pView->SetTPdataToAccess(strAllTPdata);
-		//			pView->GetPointCoordinate();
-
 		//			//////////////////////////////
-		//			INT16U u16BeginNumb_Node = 1;
-		//			INT8U u8ReadCount_Node = 0 , n = 0 , temp8 = 0;
+		//			INT16U BeginNumb = 1;
+		//			INT8U u8CountNode = 0 , n = 0 , temp8 = 0;
 		//			INT16U temp16_Node = 0 , u16Numb = 0;
 		//			CString strMAC = _T("") , strWhere = _T("");
 		//			CString strNumb , strSTAMsg[1024] , strlist[10];
