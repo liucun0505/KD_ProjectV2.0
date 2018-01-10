@@ -150,8 +150,8 @@ HBRUSH CCKQViewConfig::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 void CCKQViewConfig::OnInitialUpdate()
 {
 	CFormView::OnInitialUpdate();
-	CImage image;  
-	HBITMAP hBmpGroup;
+	//CImage image;  
+	//HBITMAP hBmpGroup;
 	//image.Load(_T("GroupBackColor.png"));
 	//hBmpGroup = image.Detach();
 	//m_pictureMap.SetBitmap(hBmpGroup);

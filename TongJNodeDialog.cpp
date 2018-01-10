@@ -80,6 +80,9 @@ int TongJNodeDialog::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	pView=(ShowNetTreeView*)m_cSplitter.GetPane(0,0);//不能放在单独的函数里
 	pViewOnlineList=(ShowNetListView*)m_cSplitter.GetPane(0,1);
 	pViewLostList=(ShowNetListView*)m_cSplitter.GetPane(0,2);
+	pViewLostList->GetListCtrl().DeleteAllItems();
+	pViewLostList->GetListCtrl().InsertColumn(0,_T("序号"),LVCFMT_LEFT,50);
+	pViewLostList->GetListCtrl().InsertColumn(1,_T("未入网MAC地址"),LVCFMT_LEFT,150);
 	return 0;
 }
 
@@ -146,7 +149,7 @@ void TongJNodeDialog::InsertItemToOnlineList(CString strMAC , CString strTEI , C
 	pViewOnlineList->GetListCtrl().InsertColumn(0,_T("序号"),LVCFMT_LEFT,50);
 	pViewOnlineList->GetListCtrl().InsertColumn(1,_T("入网MAC地址"),LVCFMT_LEFT,150);
 	pViewOnlineList->GetListCtrl().InsertColumn(2,_T("TEI"),LVCFMT_CENTER,50);
-	//pViewOnlineList->GetListCtrl().InsertColumn(3,_T("模块类型"),LVCFMT_CENTER,200);
+	pViewOnlineList->GetListCtrl().InsertColumn(3,_T("模块类型"),LVCFMT_CENTER,200);
 	CString strNumb;
 	int n = 0;
 	n = pViewOnlineList->GetListCtrl().GetItemCount();
