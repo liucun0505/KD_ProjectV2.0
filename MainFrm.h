@@ -321,6 +321,7 @@ public:
 	CTools m_tools;
 	int m_nCopyFrame;
 	CFrameShowWnd m_FrameShowWnd;
+	CFrameShowWnd m_FrameShowWndTree;
 
 // ÖØÐ´
 public:

@@ -225,6 +225,18 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	m_FrameShowWnd.EnableDocking(CBRS_ALIGN_ANY); //使可停靠与浮动  
 	DockPane(&m_FrameShowWnd);
 	m_FrameShowWnd.ShowWindow(SW_HIDE);
+
+	CString strObjectView2("树形拓扑");  
+	if (!m_FrameShowWndTree.Create(strObjectView2, this, CRect(0, 0, 200, 200), TRUE, 1002, WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | CBRS_RIGHT | CBRS_FLOAT_MULTI))  
+	{  
+		TRACE0("未能创建“树形拓扑”窗口\n");  
+		return 0; // 未能创建  
+	}
+	m_FrameShowWndTree.EnableDocking(CBRS_ALIGN_ANY); //使可停靠与浮动  
+	DockPane(&m_FrameShowWndTree);
+	m_FrameShowWndTree.ShowWindow(SW_HIDE);
+	m_FrameShowWndTree.ShowWindow(SW_SHOW);
+	//m_FrameShowWndTree
 		//m_FrameShowWnd.GetTabControl()->SetFont (&m_Font70); 
 	return 0;
 }
