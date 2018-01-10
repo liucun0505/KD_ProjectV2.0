@@ -270,7 +270,7 @@ void CDlgConnection::AddPort()
 		}
 		if( m_combCommPort.GetCount() == 0 )
 		{
-			::AfxMessageBox(_T("在HKEY_LOCAL_MACHINE:Hardware\\DeviceMap\\SerialComm里找不到串口!!!" ));
+			//::AfxMessageBox(_T("在HKEY_LOCAL_MACHINE:Hardware\\DeviceMap\\SerialComm里找不到串口!!!" ));
 		}
 		else
 		{

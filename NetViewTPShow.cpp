@@ -183,9 +183,9 @@ DWORD WINAPI ThreadSendTP_10F21 (PVOID pParam) //»ñÈ¡ÍØÆËÍ¼CKQ2017
 				}
 
 				//AfxMessageBox(strAllTPdata);
-				//pView->SetTPdataToAccess_10F21(strAllTPdata);
-				//pView->GetPointCoordinate();
-				//pView->m_DlgTongJiNode.InsertItemToTreeList(_T("TPShow"));
+				pView->SetTPdataToAccess_10F21(strAllTPdata);
+				pView->GetPointCoordinate();
+				pView->m_DlgTongJiNode.InsertItemToTreeList(_T("TPShow"));
 
 				//	CString strMAC = _T("") , strWhere = _T("");
 				//	CString strNumb , strSTAMsg[1024] , strlist[10];
