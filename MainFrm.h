@@ -1,6 +1,7 @@
 
 // MainFrm.h : CMainFrame 类的接口
 //
+#include "m_FrameShowWndTree.h"
 #include "ChildFrm.h"
 #include "FrameSetNet.h"
 #include "Frame3762.h"
@@ -321,7 +322,7 @@ public:
 	CTools m_tools;
 	int m_nCopyFrame;
 	CFrameShowWnd m_FrameShowWnd;
-	CFrameShowWnd m_FrameShowWndTree;
+	m_FrameShowWndTree mm_FrameShowWndTree;
 
 // 重写
 public:
@@ -366,5 +367,4 @@ public:
 	afx_msg void OnClose();
 //	afx_msg void OnIdrRbmenuMeterr();
 };
-
 

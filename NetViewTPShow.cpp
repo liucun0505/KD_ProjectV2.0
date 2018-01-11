@@ -185,7 +185,7 @@ DWORD WINAPI ThreadSendTP_10F21 (PVOID pParam) //获取拓扑图CKQ2017
 				//AfxMessageBox(strAllTPdata);
 				pView->SetTPdataToAccess_10F21(strAllTPdata);
 				pView->GetPointCoordinate();
-				pView->m_DlgTongJiNode.InsertItemToTreeList(_T("TPShow"));
+				pMain->mm_FrameShowWndTree.InsertItemToTreeList(_T("TPShow"));
 
 				//	CString strMAC = _T("") , strWhere = _T("");
 				//	CString strNumb , strSTAMsg[1024] , strlist[10];
@@ -409,7 +409,7 @@ DWORD WINAPI ThreadSendTP (PVOID pParam) //获取拓扑图CKQ2017
                                 break;
 							}
 						}
-						pView->m_DlgTongJiNode.InsertItemToTreeList(_T("TPShow"));//170912120240_T("TPShow")
+						pMain->mm_FrameShowWndTree.InsertItemToTreeList(_T("TPShow"));//170912120240_T("TPShow")
 
 
 					//						//////////////////////////////
