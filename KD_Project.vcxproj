@@ -311,7 +311,6 @@
     <ClCompile Include="MyFrameMsgTabCtrl.cpp" />
     <ClCompile Include="MyFunLib.cpp" />
     <ClCompile Include="MyListCtrl.cpp" />
-    <ClCompile Include="MyListCtrl0.cpp" />
     <ClCompile Include="MyTreeCtrl.cpp" />
     <ClCompile Include="m_FrameShowWndTree.cpp" />
     <ClCompile Include="NetViewPToP.cpp" />

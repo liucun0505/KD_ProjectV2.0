@@ -560,9 +560,6 @@
     <ClCompile Include="MyTreeCtrl.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="MyListCtrl0.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="KD_Project.rc">
