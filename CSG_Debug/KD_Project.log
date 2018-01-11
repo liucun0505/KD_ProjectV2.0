@@ -1,14 +1,389 @@
-﻿生成启动时间为 18.1.11 10:57:51。
+﻿生成启动时间为 18.1.11 16:38:48。
      1>项目“D:\抄控器2.0程序\KD_ProjectV2.0_180104\KD_ProjectV2.0\KD_Project.vcxproj”在节点 2 上(build 个目标)。
        项目文件包含 ToolsVersion="12.0"。此工具集可能未知或缺失。在这种情况下，通过安装 MSBuild 的正确版本，或许可以解决此问题。否则，该 build 可能已因策略原因而被强制为某个特定 ToolsVersion。将该项目视为其已具有 ToolsVersion="4.0"。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=291333。
      1>InitializeBuildStatus:
-         正在对“CSG_Debug\KD_Project.unsuccessfulbuild”执行 Touch 任务。
+         正在创建“CSG_Debug\KD_Project.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
          所有输出均为最新。
-         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _STD_CSG /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MT /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"CSG_Debug\KD_Project.pch" /Fo"CSG_Debug\\" /Fd"CSG_Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt MyTreeCtrl.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _STD_CSG /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MT /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"CSG_Debug\KD_Project.pch" /Fo"CSG_Debug\\" /Fd"CSG_Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt AddMacTest.cpp CKQ2017.cpp CKQTabViewTPshow.cpp CKQViewConfig.cpp CKQViewErrTab.cpp CKQViewTPShowOldData.cpp CKQViewTabErrMet.cpp CKQViewTabErrMod.cpp CKQViewUpdata.cpp CSG13762.cpp ChildFrm.cpp CmdEdit.cpp Cmybutton.cpp DisplayData.cpp Dlg13762Frame.cpp Dlg13762UpdataConfig.cpp DlgAddress.cpp DlgCCOTPchange.cpp DlgCKQUpdataTime.cpp DlgConnection.cpp DlgExtStaDevStatus.cpp DlgExtStaVersion.cpp DlgNetTP.cpp DlgOldTPMessage.cpp DlgSaveDebugInfo.cpp DlgSaveNodeInfo.cpp DlgSelect.cpp DlgTongJiNode.cpp DlgXYData.cpp FView3762.cpp Form698.cpp FormTabView1.cpp Frame3762.cpp FrameSetNet.cpp FrameShowWnd.cpp GW13762.cpp KD_Project.cpp KD_ProjectDoc.cpp KD_ProjectView.cpp LogFile.cpp MSDU2017.cpp MainFrm.cpp MainTestDoc.cpp MainTestFrame.cpp MidNetForm.cpp MyFrameMsgTabCtrl.cpp MyListCtrl.cpp MyTreeCtrl.cpp NetViewPToP.cpp NetViewRepeat.cpp NetViewTPShow.cpp RightTabView.cpp SetWriteDataDlg.cpp SetWriteLoopNub.cpp ShowNetListView.cpp ShowNetTreeView.cpp SimJZQ.cpp SimMeter.cpp TPDlgJDMsg.cpp TPDlgShowExplian.cpp TPShowFindList.cpp TongJNodeDialog.cpp View698.cpp ViewLetTree.cpp m_FrameShowWndTree.cpp
+         m_FrameShowWndTree.cpp
+         ViewLetTree.cpp
+         View698.cpp
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\apdudata.h(77): warning C4091: “typedef ”: 没有声明变量时忽略“sProcess_DataNodeType”的左侧
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\apdudata.h(112): warning C4091: “typedef ”: 没有声明变量时忽略“Data”的左侧
+         TongJNodeDialog.cpp
+         TPShowFindList.cpp
+         TPDlgShowExplian.cpp
+         TPDlgJDMsg.cpp
+         SimMeter.cpp
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\simmeter.cpp(1056): warning C4178: 对于此类 switch 表达式而言，case 常量“107407671553”太大
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\simmeter.cpp(1056): warning C4309: “case”: 截断常量值
+         SimJZQ.cpp
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\simjzq.cpp(463): warning C4101: “acklen”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\simjzq.cpp(465): warning C4101: “ack”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\simjzq.cpp(1862): warning C4101: “DstDecode2007DataFrame”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\simjzq.cpp(1907): warning C4101: “DstDecode2007DataFrame”: 未引用的局部变量
+         ShowNetTreeView.cpp
+         ShowNetListView.cpp
+         SetWriteLoopNub.cpp
+         SetWriteDataDlg.cpp
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(304): warning C4258: “a”: 忽略 For 循环中的定义；使用封闭范围中的定义
+                 d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(296) : 忽略“a”的定义
+                 d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(266) : 使用“a”的定义
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(304): warning C4258: “a”: 忽略 For 循环中的定义；使用封闭范围中的定义
+                 d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(296) : 忽略“a”的定义
+                 d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(266) : 使用“a”的定义
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(304): warning C4258: “a”: 忽略 For 循环中的定义；使用封闭范围中的定义
+                 d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(296) : 忽略“a”的定义
+                 d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(266) : 使用“a”的定义
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(306): warning C4258: “a”: 忽略 For 循环中的定义；使用封闭范围中的定义
+                 d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(296) : 忽略“a”的定义
+                 d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(266) : 使用“a”的定义
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(311): warning C4258: “a”: 忽略 For 循环中的定义；使用封闭范围中的定义
+                 d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(296) : 忽略“a”的定义
+                 d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(266) : 使用“a”的定义
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(311): warning C4258: “a”: 忽略 For 循环中的定义；使用封闭范围中的定义
+                 d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(296) : 忽略“a”的定义
+                 d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(266) : 使用“a”的定义
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(311): warning C4258: “a”: 忽略 For 循环中的定义；使用封闭范围中的定义
+                 d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(296) : 忽略“a”的定义
+                 d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(266) : 使用“a”的定义
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(313): warning C4258: “a”: 忽略 For 循环中的定义；使用封闭范围中的定义
+                 d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(296) : 忽略“a”的定义
+                 d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(266) : 使用“a”的定义
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(344): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(515): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(523): warning C4258: “m”: 忽略 For 循环中的定义；使用封闭范围中的定义
+                 d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(515) : 忽略“m”的定义
+                 d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(459) : 使用“m”的定义
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(526): warning C4258: “m”: 忽略 For 循环中的定义；使用封闭范围中的定义
+                 d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(515) : 忽略“m”的定义
+                 d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(459) : 使用“m”的定义
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(532): warning C4258: “m”: 忽略 For 循环中的定义；使用封闭范围中的定义
+                 d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(515) : 忽略“m”的定义
+                 d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(459) : 使用“m”的定义
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\setwritedatadlg.cpp(689): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : 参见“sprintf”的声明
+         RightTabView.cpp
+         NetViewTPShow.cpp
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(156): warning C4244: “=”: 从“INT16U”转换到“INT8U”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(108): warning C4101: “AddrBuf”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(339): warning C4101: “AddrBuf”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(342): warning C4101: “sQGDW376_2HostFrame”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(342): warning C4101: “ptSendQGDW376_2”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(338): warning C4101: “SendDatabuf”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(343): warning C4101: “ptRecvQGDW376_2”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(343): warning C4101: “sRecv376_2HostFrame”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(632): warning C4244: “=”: 从“LONG”转换到“float”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(633): warning C4244: “=”: 从“LONG”转换到“float”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(634): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(634): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(694): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(694): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(695): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(695): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(702): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(702): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(703): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(703): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(704): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(704): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(705): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(705): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(715): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(715): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(715): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(715): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(722): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(746): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(746): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(899): warning C4305: “初始化”: 从“double”到“float”截断
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(939): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(939): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1047): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1050): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1055): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1018): warning C4101: “SucceBuf”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1158): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1161): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1166): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1128): warning C4101: “SucceBuf”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1303): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1303): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1352): warning C4244: “=”: 从“INT16U”转换到“INT8U”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1383): warning C4244: “=”: 从“INT16U”转换到“INT8U”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1329): warning C4101: “ptSendQCSG376_2”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewtpshow.cpp(1360): warning C4101: “ptSendQGDW376_2”: 未引用的局部变量
+         NetViewRepeat.cpp
+         NetViewPToP.cpp
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\netviewptop.cpp(78): warning C4101: “Addrebuf”: 未引用的局部变量
          MyTreeCtrl.cpp
+         MyListCtrl.cpp
+         MyFrameMsgTabCtrl.cpp
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\myframemsgtabctrl.cpp(39): warning C4002: “ON_WM_RBUTTONDOWN”宏的实参太多
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\myframemsgtabctrl.cpp(264): warning C4101: “sQGDW376_2HostFrame”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\myframemsgtabctrl.cpp(349): warning C4101: “DstDecodeDataFrame”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\myframemsgtabctrl.cpp(346): warning C4101: “recvbuf”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\myframemsgtabctrl.cpp(348): warning C4101: “sQGDW376_2HostFrame”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\myframemsgtabctrl.cpp(637): warning C4244: “初始化”: 从“INT16U”转换到“INT8U”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\myframemsgtabctrl.cpp(448): warning C4101: “DstDecodeDataFrameNW”: 未引用的局部变量
+         正在生成代码...
+         正在编译...
+         MidNetForm.cpp
+         MainTestFrame.cpp
+         MainTestDoc.cpp
+         MainFrm.cpp
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(5): warning C4627: “#include <WinSock2.h>”: 在查找预编译头使用时跳过
+                 将指令添加到“StdAfx.h”或重新生成预编译头
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(576): warning C4244: “=”: 从“long”转换到“BYTE”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(577): warning C4244: “=”: 从“long”转换到“BYTE”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(578): warning C4244: “=”: 从“long”转换到“BYTE”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(907): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : 参见“strcpy”的声明
+         MSDU2017.cpp
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(333): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(334): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(335): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(338): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(341): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(344): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(345): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(346): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(349): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(350): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(351): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(406): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(407): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(408): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(471): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(472): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(473): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(476): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(477): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(478): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(542): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(543): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(544): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(547): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(548): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(549): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(609): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(610): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(611): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(614): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(615): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(616): warning C4333: “>>”: 右移位数过大，数据将丢失
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\msdu2017.cpp(731): warning C4333: “>>”: 右移位数过大，数据将丢失
+         LogFile.cpp
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\logfile.cpp(90): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\logfile.cpp(93): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\logfile.cpp(100): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\logfile.cpp(160): warning C4101: “length”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\logfile.cpp(230): warning C4101: “length”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\logfile.cpp(419): warning C4244: “=”: 从“INT16U”转换到“BYTE”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\logfile.cpp(430): warning C4101: “length”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\logfile.cpp(476): warning C4101: “length”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\logfile.cpp(536): warning C4101: “length”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\logfile.cpp(584): warning C4101: “length”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\logfile.cpp(648): warning C4101: “length”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\logfile.cpp(704): warning C4101: “length”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\logfile.cpp(756): warning C4101: “length”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\logfile.cpp(805): warning C4101: “dcb”: 未引用的局部变量
+         KD_ProjectView.cpp
+         KD_ProjectDoc.cpp
+         KD_Project.cpp
+         GW13762.cpp
+         FrameShowWnd.cpp
+         FrameSetNet.cpp
+         Frame3762.cpp
+         FormTabView1.cpp
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\formtabview1.cpp(87): warning C4101: “SendDatabuf”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\formtabview1.cpp(192): warning C4101: “SendDatabuf”: 未引用的局部变量
+         Form698.cpp
+         FView3762.cpp
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(5): warning C4627: “#include <iostream>”: 在查找预编译头使用时跳过
+                 将指令添加到“StdAfx.h”或重新生成预编译头
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(4): warning C4603: “DLX_DB”: 未定义宏或在预编译头使用后定义发生改变
+                 将宏添加到预编译头中，而不是在此处定义
+                 d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(7) : 使用预编译头
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(299): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(315): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(348): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(470): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(632): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : 参见“sprintf”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(692): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(724): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(729): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(746): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(751): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(677): warning C4101: “chBiaoshi”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(678): warning C4101: “chZhiling”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(773): warning C4101: “ptRecvQGDW376_2”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(956): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(959): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(993): warning C4101: “Recvbufdata”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(1166): warning C4101: “Recvbufdata”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(1354): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(1357): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(1369): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(1483): warning C4102: “SENDCONTINUE”: 未引用的标签
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(1429): warning C4101: “Recvbufdata”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(1617): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(1620): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(1633): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(1790): warning C4102: “SENDCONTINUE”: 未引用的标签
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(1736): warning C4101: “Recvbufdata”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(1930): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(1933): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(1946): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(2063): warning C4102: “SENDCONTINUE”: 未引用的标签
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(2009): warning C4101: “Recvbufdata”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(2204): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(2207): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(2219): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(2263): warning C4101: “Recvbufdata”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(2756): warning C4101: “AddrBuf”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(2758): warning C4101: “SendFramebuf”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\fview3762.cpp(2944): warning C4101: “SendFramebuf”: 未引用的局部变量
+         DlgXYData.cpp
+         DlgTongJiNode.cpp
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\dlgtongjinode.cpp(208): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\dlgtongjinode.cpp(211): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\dlgtongjinode.cpp(223): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+         DlgSelect.cpp
+         DlgSaveNodeInfo.cpp
+         正在生成代码...
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\logfile.cpp(820): warning C4700: 使用了未初始化的局部变量“dcb”
+         正在编译...
+         DlgSaveDebugInfo.cpp
+         DlgOldTPMessage.cpp
+         DlgNetTP.cpp
+         DlgExtStaVersion.cpp
+         DlgExtStaDevStatus.cpp
+         DlgConnection.cpp
+         DlgCKQUpdataTime.cpp
+         DlgCCOTPchange.cpp
+         DlgAddress.cpp
+         Dlg13762UpdataConfig.cpp
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\dlg13762updataconfig.cpp(137): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+         Dlg13762Frame.cpp
+         DisplayData.cpp
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\displaydata.cpp(45): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\displaydata.cpp(53): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\displaydata.cpp(128): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\displaydata.cpp(220): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\displaydata.cpp(229): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\displaydata.cpp(296): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\displaydata.cpp(360): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\displaydata.cpp(380): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\displaydata.cpp(432): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\displaydata.cpp(1101): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\displaydata.cpp(1317): warning C4018: “<”: 有符号/无符号不匹配
+         Cmybutton.cpp
+         CmdEdit.cpp
+         ChildFrm.cpp
+         CSG13762.cpp
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\csg13762.cpp(141): warning C4101: “temp”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\csg13762.cpp(538): warning C4101: “relaycnt”: 未引用的局部变量
+         CKQViewUpdata.cpp
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewupdata.cpp(74): warning C4060: switch 语句没有包含“case”或“default”标签
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewupdata.cpp(154): warning C4101: “nCount”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewupdata.cpp(226): warning C4101: “file_tpmap”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewupdata.cpp(225): warning C4101: “szANSIString”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewupdata.cpp(216): warning C4101: “SucceBuf”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewupdata.cpp(293): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : 参见“sprintf”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewupdata.cpp(348): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewupdata.cpp(335): warning C4101: “chBiaoshi”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewupdata.cpp(336): warning C4101: “chZhiling”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewupdata.cpp(426): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewupdata.cpp(435): warning C4244: “=”: 从“long”转换到“INT16U”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewupdata.cpp(542): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : 参见“fopen”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewupdata.cpp(504): warning C4101: “chBiaoshi”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewupdata.cpp(711): warning C4101: “ptRecvQGDWF0376_2”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewupdata.cpp(718): warning C4101: “Sendbufdata”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewupdata.cpp(710): warning C4101: “ptSendQGDW376_2”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewupdata.cpp(712): warning C4101: “ptRecvQGDW376_2”: 未引用的局部变量
+         CKQViewTabErrMod.cpp
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtaberrmod.cpp(274): warning C4244: “=”: 从“INT16U”转换到“INT8U”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtaberrmod.cpp(175): warning C4101: “ptRecvQCSG376_2”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtaberrmod.cpp(174): warning C4101: “ptSendQCSG376_2”: 未引用的局部变量
+         CKQViewTabErrMet.cpp
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtaberrmet.cpp(198): warning C4244: “=”: 从“INT16U”转换到“INT8U”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtaberrmet.cpp(244): warning C4244: “=”: 从“INT16U”转换到“INT8U”，可能丢失数据
+         CKQViewTPShowOldData.cpp
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(98): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(98): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(99): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(99): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(106): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(106): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(107): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(107): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(108): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(108): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(109): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(109): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(119): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(119): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(119): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(119): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(126): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(150): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(150): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(293): warning C4244: “=”: 从“LONG”转换到“float”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(294): warning C4244: “=”: 从“LONG”转换到“float”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(295): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(295): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(348): warning C4305: “初始化”: 从“double”到“float”截断
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(388): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(388): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(462): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckqviewtpshowolddata.cpp(462): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+         正在生成代码...
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\csg13762.cpp(478): warning C4700: 使用了未初始化的局部变量“temp”
+         正在编译...
+         CKQViewErrTab.cpp
+         CKQViewConfig.cpp
+         CKQTabViewTPshow.cpp
+         CKQ2017.cpp
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\ckq2017.cpp(195): warning C4101: “j”: 未引用的局部变量
+         AddMacTest.cpp
+         正在生成代码...
        ResourceCompile:
-         所有输出均为最新。
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _DEBUG /D _UNICODE /D UNICODE /l"0x0804" /ICSG_Debug\ /nologo /fo"CSG_Debug\KD_Project.res" KD_Project.rc 
        ManifestResourceCompile:
          所有输出均为最新。
        Link:
@@ -104,4 +479,4 @@
 
 生成成功。
 
-已用时间 00:00:03.21
+已用时间 00:00:06.72
