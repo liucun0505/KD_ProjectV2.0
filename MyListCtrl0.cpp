@@ -31,11 +31,11 @@ END_MESSAGE_MAP()
 
 
 
-void CMyListCtrl0::OnContextMenu(CWnd* /*pWnd*/, CPoint /*point*/)
+void CMyListCtrl0::OnContextMenu(CWnd* /*pWnd*/, CPoint point)
 {
 	// TODO: 在此处添加消息处理程序代码
 	CMenu menu;
-	VERIFY(menu.LoadMenu(IDR_MENU_COPYFRAME));
+	VERIFY(menu.LoadMenu(IDR_MENUMSGMET));
 		CMenu* pPopup = menu.GetSubMenu(0);
 	ASSERT(pPopup != NULL);
 	CWnd* pWndPopupOwner = this;
