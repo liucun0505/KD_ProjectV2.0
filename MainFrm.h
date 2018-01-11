@@ -366,5 +366,6 @@ public:
 	afx_msg void OnCopyframe();
 	afx_msg void OnClose();
 //	afx_msg void OnIdrRbmenuMeterr();
+	afx_msg void OnAddmetmsg();
 };
 

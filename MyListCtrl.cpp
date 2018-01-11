@@ -68,7 +68,8 @@ void   CMyListCtrl::DrawItem(LPDRAWITEMSTRUCT   lpDIS)
 		switch (m_nChooseList)
 		{
 		case 0://信息
-			return;
+			str = GetItemText(lpDIS->itemID,1);
+			break;
 		case 1://报文
 			str = GetItemText(lpDIS->itemID,1);
 			if (str == "发送>>")
@@ -264,8 +265,9 @@ void CMyListCtrl::OnContextMenu(CWnd* /*pWnd*/, CPoint point)
 	CMenu menu;//
 	switch (m_nChooseList)
 	{
-	case 0://信息右键菜单
-		return;
+	case 0:
+		VERIFY(menu.LoadMenu(IDR_MENUMSGMET));
+	    break;
 	case 1://报文右键菜单
 		VERIFY(menu.LoadMenu(IDR_MENU_COPYFRAME));
 		break;

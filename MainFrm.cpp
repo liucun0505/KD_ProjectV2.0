@@ -12,6 +12,7 @@
 #include "Tools.h"
 #include "cSerBuf_LoopRcv.h"
 #include "DlgSelect.h"
+#include "AddMacTest.h"
 //extern cSerBuf_LoopRcv  m_loopRcv64507;
 extern cSerBuf_LoopRcv m_loopRcv13762;
 
@@ -51,6 +52,7 @@ BEGIN_MESSAGE_MAP(CMainFrame, CMDIFrameWndEx)
 	ON_COMMAND(ID_FRAMESHOW, &CMainFrame::OnFrameshow)
 	ON_COMMAND(ID_COPYFRAME, &CMainFrame::OnCopyframe)
 	ON_WM_CLOSE()
+	ON_COMMAND(ID_ADDMETMSG, &CMainFrame::OnAddmetmsg)
 END_MESSAGE_MAP()
 
 
@@ -994,4 +996,30 @@ CString CMainFrame::GetAckErrName(INT8U nChoose)
 		break;
 	}
 	return str;
+}
+
+void CMainFrame::OnAddmetmsg()
+{
+	// TODO: 在此添加命令处理程序代码
+
+	INT_PTR nRes;             // 用于保存DoModal函数的返回值   
+    CString str;
+    AddMacTest tipDlg;           // 构造对话框类CTipDlg的实例   
+    nRes = tipDlg.DoModal();  // 弹出对话框   
+    if (IDCANCEL == nRes)     // 判断对话框退出后返回值是否为IDCANCEL，如果是则return，否则继续向下执行   
+        return;   
+  
+    // 将各控件中的数据保存到相应的变量   
+    UpdateData(TRUE);   
+  
+    // 将被加数和加数的加和赋值给m_editSum   
+	int m=m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetItemCount();
+	str.Format(_T("%d") , m + 1);
+	m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.InsertItem(m,str);
+	m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(m ,1,tipDlg.m_MAC);
+	m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(m ,2,tipDlg.m_TEI);  
+	m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(m ,3,tipDlg.m_TYPE); 
+    
+    // 根据各变量的值更新相应的控件。和的编辑框会显示m_editSum的值   
+    //UpdateData(FALSE);  
 }
