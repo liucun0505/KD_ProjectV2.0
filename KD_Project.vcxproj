@@ -226,6 +226,7 @@
     <ClInclude Include="MyFrameMsgTabCtrl.h" />
     <ClInclude Include="MyFunLib.h" />
     <ClInclude Include="MyListCtrl.h" />
+    <ClInclude Include="MyTreeCtrl.h" />
     <ClInclude Include="m_FrameShowWndTree.h" />
     <ClInclude Include="NetViewPToP.h" />
     <ClInclude Include="NetViewRepeat.h" />
@@ -309,6 +310,7 @@
     <ClCompile Include="MyFrameMsgTabCtrl.cpp" />
     <ClCompile Include="MyFunLib.cpp" />
     <ClCompile Include="MyListCtrl.cpp" />
+    <ClCompile Include="MyTreeCtrl.cpp" />
     <ClCompile Include="m_FrameShowWndTree.cpp" />
     <ClCompile Include="NetViewPToP.cpp" />
     <ClCompile Include="NetViewRepeat.cpp" />
