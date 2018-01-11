@@ -971,6 +971,7 @@ CString CMainFrame::GetRecvErrName(INT8U nChoose)
 	}
 	return str;
 }
+//
 CString CMainFrame::GetAckErrName(INT8U nChoose)
 {
 	CString str;
