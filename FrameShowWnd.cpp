@@ -45,8 +45,8 @@ int CFrameShowWnd::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	rectDummy.SetRectEmpty(); 
 	m_myTabCtrl.Create(TCS_TABS|WS_CHILD|WS_VISIBLE,rectDummy,this,IDC_TABLE_MYSHOWFRAME);   
 	m_myTabCtrl.SetFont(&m_Font); 
-	m_myTabCtrl.InsertItem(0,_T("       信息       "));  
-	m_myTabCtrl.InsertItem(1,_T("       报文       ")); 
+	m_myTabCtrl.InsertItem(0,_T("     电表信息     "));  
+	m_myTabCtrl.InsertItem(1,_T("     报文记录     ")); 
 	m_myTabCtrl.InsertItem(2,_T("      命令行      "));
 	m_myTabCtrl.InsertItem(3,_T("   376.2报文解析  "));
 	return 0;
