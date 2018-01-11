@@ -318,6 +318,9 @@
     <ClInclude Include="ShowNetTreeView.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="m_FrameShowWndTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KD_Project.cpp">
@@ -543,6 +546,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ShowNetTreeView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="m_FrameShowWndTree.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
