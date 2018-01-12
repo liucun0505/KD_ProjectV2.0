@@ -1019,7 +1019,9 @@ void CMainFrame::OnAddmetmsg()
 	m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(m ,1,tipDlg.m_MAC);
 	m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(m ,2,tipDlg.m_TEI);  
 	m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(m ,3,tipDlg.m_TYPE); 
-    
+	m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.EnsureVisible(m,FALSE);
+	m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.RedrawItems(m,m);
+    UpdateData(FALSE);   
     // 根据各变量的值更新相应的控件。和的编辑框会显示m_editSum的值   
     //UpdateData(FALSE);  
 }
