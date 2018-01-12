@@ -324,9 +324,6 @@
     <ClInclude Include="MyTreeCtrl.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="MyListCtrl0.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="MyListCtrl_1.h">
       <Filter>头文件</Filter>
     </ClInclude>

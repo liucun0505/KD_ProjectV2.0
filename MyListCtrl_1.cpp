@@ -47,3 +47,61 @@ void MyListCtrl_1::OnContextMenu(CWnd* /*pWnd*/, CPoint point)
 	pPopup->TrackPopupMenu(TPM_LEFTALIGN | TPM_RIGHTBUTTON, point.x, point.y,
 		pWndPopupOwner);
 }
+
+
+void MyListCtrl_1::DrawItem(LPDRAWITEMSTRUCT lpDIS)
+{
+
+	// TODO:  添加您的代码以绘制指定项
+
+		CDC* pDC = CDC::FromHandle(lpDIS->hDC); 
+	
+	LVITEM lvi = {0}; 
+	lvi.mask = LVIF_STATE;//|LVIF_IMAGE; 
+	lvi.stateMask = LVIS_FOCUSED | LVIS_SELECTED ; 
+	lvi.iItem = lpDIS->itemID; 
+	BOOL bGet = GetItem(&lvi); 
+	
+	BOOL bHighlight =((lvi.state & LVIS_DROPHILITED)||((lvi.state & LVIS_SELECTED) && 
+		((GetFocus() == this)|| (GetStyle() & LVS_SHOWSELALWAYS)))); 
+	
+	// 画文本背景 
+	CRect rcBack = lpDIS->rcItem; 
+	pDC->SetBkMode(TRANSPARENT); 
+	if( bHighlight ) 
+	{ 
+		pDC->SetTextColor(::GetSysColor(COLOR_HIGHLIGHTTEXT)); 
+		pDC->SetBkColor(::GetSysColor(COLOR_HIGHLIGHT)); 
+		
+		pDC->FillRect(rcBack, &CBrush(::GetSysColor(COLOR_HIGHLIGHT))); 
+	} 
+	else 
+	{ 
+		CString str = _T("");
+			str = GetItemText(lpDIS->itemID,1);
+			pDC->SetTextColor(0x792355);
+		
+	} 
+		//设置字体颜色 
+	CString str; 
+	
+	//得到焦点大小 
+	CRect rcFocus = lpDIS->rcItem; 
+	rcFocus.DeflateRect(1,1,1,1); 
+	
+	if (lpDIS->itemAction & ODA_DRAWENTIRE) 
+	{ 
+		//写文本 
+		CString szText; 
+		for (int i = 0; i < 10; i++) 
+		{ 
+			CRect rcItem; 
+			if ( !GetSubItemRect(lpDIS->itemID, i, LVIR_LABEL, rcItem )) 
+				continue; 
+			szText = GetItemText( lpDIS->itemID, i ); 
+			rcItem.left += 5;
+			rcItem.right -= 1; 
+			pDC->DrawText(szText, lstrlen(szText), &rcItem, DT_LEFT|DT_VCENTER|DT_NOPREFIX|DT_SINGLELINE); 
+		} 
+	}
+}
