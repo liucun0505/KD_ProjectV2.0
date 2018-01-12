@@ -3,6 +3,7 @@
 #include "Cmybutton.h"
 // CMyFrameMsgTabCtrl
 #include "MyListCtrl.h"
+#include "MyListCtrl_1.h"
 #include "Tools.h"
 class CMyFrameMsgTabCtrl : public CTabCtrl
 {
@@ -17,7 +18,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 
 public:
-	CMyListCtrl  m_ctrlMssage;
+	MyListCtrl_1  m_ctrlMssage;
 	CMyListCtrl m_ctrlFrame;
 	CEdit* m_editMLH ;//(CEdit*)GetDlgItem(IDC_EDIT1);
 	CEdit* m_editRec ;

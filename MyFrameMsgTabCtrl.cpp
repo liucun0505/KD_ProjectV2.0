@@ -59,7 +59,7 @@ int CMyFrameMsgTabCtrl::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	CRect rectDummy , rt;
 	rectDummy.SetRectEmpty(); 
 
-	m_ctrlMssage.Create(WS_CHILD|WS_VISIBLE|WS_BORDER|LVS_REPORT|LVS_OWNERDRAWFIXED,rectDummy,this,IDC_LISTXINXI);
+	m_ctrlMssage.Create(WS_CHILD|WS_VISIBLE|WS_BORDER|LVS_REPORT|LVS_OWNERDRAWFIXED,rectDummy,this,IDD_MYLISTCTRL_1);
 	m_ctrlMssage.InsertColumn(0,_T("序号"),LVCFMT_LEFT,60);
 	m_ctrlMssage.InsertColumn(1,_T("电表号"),LVCFMT_LEFT,180);
 	m_ctrlMssage.InsertColumn(2,_T("TEI号"),LVCFMT_CENTER,80);
@@ -67,7 +67,7 @@ int CMyFrameMsgTabCtrl::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	m_ctrlMssage.InsertColumn(4,_T("正向有功总电能"),LVCFMT_CENTER,200);
 	m_ctrlMssage.InsertColumn(5,_T("抄读结果"),LVCFMT_CENTER,100);
 	m_ctrlMssage.SetExtendedStyle(LVS_EX_FULLROWSELECT|LVS_EX_GRIDLINES);
-	m_ctrlMssage.m_nChooseList = 0;
+	//m_ctrlMssage.m_nChooseList = 0;
 
 	m_ctrlFrame.Create(WS_CHILD|WS_VISIBLE|WS_BORDER|LVS_REPORT|LVS_OWNERDRAWFIXED,rectDummy,this,IDC_LISTXINXI);
 	m_ctrlFrame.GetWindowRect(rt);
