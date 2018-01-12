@@ -1024,3 +1024,31 @@ void CMainFrame::OnAddmetmsg()
     // 根据各变量的值更新相应的控件。和的编辑框会显示m_editSum的值   
     UpdateData(FALSE);  
 }
+
+void CMainFrame::InsertItemToOnlineList(CString strMAC , CString strTEI, CString strTableName)
+{
+	//ShowNetListView *pViewOnlineList=(ShowNetListView*)m_cSplitter.GetPane(0,1);//放在OnCreate函数里
+	//m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.DeleteAllItems();
+	//CString strNumb;
+	//int n = 0;
+	//CString str_nodeNum = _T("");
+	//CString strAllDatalist[500][6];
+	//CString f_strDatalist[6][500];
+	//int nNumb = 0 , nAlldataNumb;
+	//int n = 0 , m = 0 , i = 0;
+	//m_access.SelectDataFromTable(m_PeiZhi_db/*_T(".\\配置文件\\HistTPShow.accdb")*/, strTableName , _T("TP_MAC,TP_TEI,TP_PTEI,TP_ROLE,TP_TIER,TP_READSUCCESS") ,_T("") ,m_strlist ,nAlldataNumb);
+	//if(nAlldataNumb>0){
+	//	for(n = 0 ; n < nAlldataNumb ; n++)
+	//	{
+	//		m_tools.Split(m_strlist[n] , _T("$") ,strAllDatalist[n] , nNumb);
+	//	}
+	//}
+
+
+	//pViewOnlineList->GetListCtrl().InsertItem(n , strNumb);
+	//pViewOnlineList->GetListCtrl().SetItemText(n , 1 , strAddress);
+	////pViewOnlineList->GetListCtrl().SetItemText(n , 1 , strMAC.Mid(0 , 2) + _T(":") + strMAC.Mid(2 , 2) + _T(":") + strMAC.Mid(4 , 2) + _T(":") + strMAC.Mid(6 , 2) + _T(":") + strMAC.Mid(8 , 2) + _T(":") + strMAC.Mid(10 , 2));
+	//pViewOnlineList->GetListCtrl().SetItemText(n , 2 , strTEI);
+	//pViewOnlineList->GetListCtrl().EnsureVisible(n,FALSE);
+	//pViewOnlineList->GetListCtrl().RedrawItems(n,n);
+}

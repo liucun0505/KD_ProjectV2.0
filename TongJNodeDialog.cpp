@@ -158,27 +158,6 @@ void TongJNodeDialog::InsertItemToOnlineList(CString strMAC , CString strTEI , C
 	pViewOnlineList->GetListCtrl().SetItemText(n , 1 , strAddress);
 	//pViewOnlineList->GetListCtrl().SetItemText(n , 1 , strMAC.Mid(0 , 2) + _T(":") + strMAC.Mid(2 , 2) + _T(":") + strMAC.Mid(4 , 2) + _T(":") + strMAC.Mid(6 , 2) + _T(":") + strMAC.Mid(8 , 2) + _T(":") + strMAC.Mid(10 , 2));
 	pViewOnlineList->GetListCtrl().SetItemText(n , 2 , strTEI);
-	//OnlineList.SetItemText(n , 3 , strAddress);
-	//switch(_ttoi(strType))
-	//{
-	//case 1:
-	//	break;
-	//case 2:
-	//	OnlineList.SetItemText(n , 4 , _T("¼¯ÖÐÆ÷ÔØ²¨Ä£¿é"));
-	//	break;
-	//case 3:
-	//	break;
-	//case 4:
-	//	if (strMAC.Find(_T("BEBEBEBEBE")) != -1 )
-	//	{
-	//		OnlineList.SetItemText(n , 4 , _T("³­¿ØÆ÷ÔØ²¨Ä£¿é"));
-	//	} 
-	//	else
-	//	{
-	//		OnlineList.SetItemText(n , 4 , _T("µ¥Ïà±íÔØ²¨Ä£¿é"));
-	//	}
-	//	break;
-	//}
 	pViewOnlineList->GetListCtrl().EnsureVisible(n,FALSE);
 	pViewOnlineList->GetListCtrl().RedrawItems(n,n);
 }

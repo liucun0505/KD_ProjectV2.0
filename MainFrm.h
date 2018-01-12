@@ -323,7 +323,7 @@ public:
 	int m_nCopyFrame;
 	CFrameShowWnd m_FrameShowWnd;
 	m_FrameShowWndTree mm_FrameShowWndTree;
-
+	void InsertItemToOnlineList(CString strMAC , CString strTEI,CString strTableName );
 // ÖØÐ´
 public:
 	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
