@@ -327,6 +327,9 @@
     <ClInclude Include="MyListCtrl0.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="MyListCtrl_1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KD_Project.cpp">
@@ -558,6 +561,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="MyTreeCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyListCtrl_1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
