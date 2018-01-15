@@ -287,6 +287,7 @@ public://串口参数
 	bool m_bCommunictStop;
 	CWinThread* m_pThread;  // 代表辅助线程
 	HANDLE m_hThreadsend;
+	int i_Threadsend;//1抄表 4添加从节点 5删除从节点
 	volatile BOOL m_bConnected;  //串口是否联接
 	volatile HWND m_hTermWnd;    //保存视图的窗口句柄
 	volatile HANDLE m_hPostMsgEvent; // 用于WM_COMMNOTIFY消息的事件对象

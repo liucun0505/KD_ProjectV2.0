@@ -1084,19 +1084,20 @@ DWORD WINAPI ThreadSendbufRead (PVOID pParam)
 			}
 			pMain->m_tools._str16tobuf16(NodeMAC , AddrBuf , temp16 , true);//小端模式
 			pMain->m_tools._str16tobuf16(NodeTEI , TEIBuf , teilen , true);
-			//pView->SetUpdataListData();//生成MSDU帧段  传输文件的帧
+			if(pMain->i_Threadsend==1){
 //-----------------------测试抄表-------------------------------------
-			AddrBuf[6]=2;
-		    ack=pMain->MainFSimJzq.ReadMeterAndCmpMter(1,AddrBuf,0x00010000,ptSendQGDW376_2,ptRecvQGDWF0376_2);
-			if(ack == DACK_SUCESS)
-			{
+				AddrBuf[6]=2;
+				ack=pMain->MainFSimJzq.ReadMeterAndCmpMter(1,AddrBuf,0x00010000,ptSendQGDW376_2,ptRecvQGDWF0376_2);
+				if(ack == DACK_SUCESS)
+				{
 				
-			    pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetSelectionMark(),5,_T("成功"));
-				pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetTextColor(0x55555);
-			}
-			else{
-			     pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetSelectionMark(),5,_T("失败"));
-				 pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetTextColor(0x10);
+					pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetSelectionMark(),5,_T("成功"));
+					pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetTextColor(0x55555);
+				}
+				else{
+						pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetSelectionMark(),5,_T("失败"));
+						pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetTextColor(0x10);
+				}
 			}
 	
 	return 0;
@@ -1109,6 +1110,7 @@ void CMainFrame::OnReadmet()
 	pMain->m_bCommunictStop = false;
 	if (pMain->m_bConnected == TRUE)
 	{
+		i_Threadsend=1;
 		m_hThreadsend=CreateThread (NULL,0,ThreadSendbufRead,this,0,NULL);
 		CloseHandle(m_hThreadsend);
 	}
