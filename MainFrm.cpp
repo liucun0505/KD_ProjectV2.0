@@ -13,6 +13,7 @@
 #include "cSerBuf_LoopRcv.h"
 #include "DlgSelect.h"
 #include "AddMacTest.h"
+
 //extern cSerBuf_LoopRcv  m_loopRcv64507;
 extern cSerBuf_LoopRcv m_loopRcv13762;
 
@@ -53,6 +54,7 @@ BEGIN_MESSAGE_MAP(CMainFrame, CMDIFrameWndEx)
 	ON_COMMAND(ID_COPYFRAME, &CMainFrame::OnCopyframe)
 	ON_WM_CLOSE()
 	ON_COMMAND(ID_ADDMETMSG, &CMainFrame::OnAddmetmsg)
+	ON_COMMAND(ID_READMET, &CMainFrame::OnReadmet)
 END_MESSAGE_MAP()
 
 
@@ -1025,24 +1027,29 @@ void CMainFrame::OnAddmetmsg()
     UpdateData(FALSE);  
 }
 
-void CMainFrame::InsertItemToOnlineList(CString strMAC , CString strTEI, CString strTableName)
+void CMainFrame::InsertItemToOnlineList(CString strTableName)
 {
 	//ShowNetListView *pViewOnlineList=(ShowNetListView*)m_cSplitter.GetPane(0,1);//放在OnCreate函数里
-	//m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.DeleteAllItems();
-	//CString strNumb;
-	//int n = 0;
-	//CString str_nodeNum = _T("");
-	//CString strAllDatalist[500][6];
-	//CString f_strDatalist[6][500];
-	//int nNumb = 0 , nAlldataNumb;
-	//int n = 0 , m = 0 , i = 0;
-	//m_access.SelectDataFromTable(m_PeiZhi_db/*_T(".\\配置文件\\HistTPShow.accdb")*/, strTableName , _T("TP_MAC,TP_TEI,TP_PTEI,TP_ROLE,TP_TIER,TP_READSUCCESS") ,_T("") ,m_strlist ,nAlldataNumb);
-	//if(nAlldataNumb>0){
-	//	for(n = 0 ; n < nAlldataNumb ; n++)
-	//	{
-	//		m_tools.Split(m_strlist[n] , _T("$") ,strAllDatalist[n] , nNumb);
-	//	}
-	//}
+	m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.DeleteAllItems();
+	CString strNumb;
+	CString m_strlist[1000];
+	CString str;
+	CString str_nodeNum = _T("");
+	CString strAllDatalist[500][6];
+	CString f_strDatalist[6][500];
+	int nNumb = 0 , nAlldataNumb;
+	int n = 0 , m = 0 , i = 0;
+	m_access.SelectDataFromTable(m_PeiZhi_db/*_T(".\\配置文件\\HistTPShow.accdb")*/, strTableName , _T("TP_MAC,TP_TEI") ,_T("") ,m_strlist ,nAlldataNumb);
+	if(nAlldataNumb>0){
+		for(n = 0 ; n < nAlldataNumb ; n++)
+		{
+			m_tools.Split(m_strlist[n] , _T("$") ,strAllDatalist[n] , nNumb);
+	        str.Format(_T("%d") , n + 1);
+	        m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.InsertItem(n,str);
+	        m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(n ,1,strAllDatalist[n][0]);
+	        m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(n ,2,strAllDatalist[n][1]); 
+		}
+	}
 
 
 	//pViewOnlineList->GetListCtrl().InsertItem(n , strNumb);
@@ -1051,4 +1058,62 @@ void CMainFrame::InsertItemToOnlineList(CString strMAC , CString strTEI, CString
 	//pViewOnlineList->GetListCtrl().SetItemText(n , 2 , strTEI);
 	//pViewOnlineList->GetListCtrl().EnsureVisible(n,FALSE);
 	//pViewOnlineList->GetListCtrl().RedrawItems(n,n);
+}
+
+
+
+DWORD WINAPI ThreadSendbufRead (PVOID pParam)
+{
+	//AfxMessageBox(_T("升级"));
+	CMainFrame * pMain = (CMainFrame*)AfxGetApp()->GetMainWnd();
+	sPartQGDW376_2CreatFrame ptSendQGDW376_2;
+	sPartQGDW376_2DeCodeFrame ptRecvQGDWF0376_2;
+	sPartQGDW376_2DeCodeFrame ptRecvQGDW376_2;
+
+	CString NodeMAC,NodeTEI,NodeTYPE;
+	INT8U Sendbufdata[2000] ,AddrBuf[7],TEIBuf[2];
+	INT16U Sendbuflen = 0,temp16 = 0,teilen;
+	INT8U ack = -1;
+     //抄读
+			NodeMAC=pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetItemText(pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetSelectionMark(),1);
+			NodeTEI=pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetItemText(pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetSelectionMark(),2);
+			NodeTYPE=pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetItemText(pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetSelectionMark(),3);
+			if(NodeMAC==""||NodeTEI==""){
+				AfxMessageBox(_T("未选中节点"));
+				return 0;
+			}
+			pMain->m_tools._str16tobuf16(NodeMAC , AddrBuf , temp16 , true);//小端模式
+			pMain->m_tools._str16tobuf16(NodeTEI , TEIBuf , teilen , true);
+			//pView->SetUpdataListData();//生成MSDU帧段  传输文件的帧
+//-----------------------测试抄表-------------------------------------
+			AddrBuf[6]=2;
+		    ack=pMain->MainFSimJzq.ReadMeterAndCmpMter(1,AddrBuf,0x00010000,ptSendQGDW376_2,ptRecvQGDWF0376_2);
+			if(ack == DACK_SUCESS)
+			{
+				
+			    pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetSelectionMark(),5,_T("成功"));
+				pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetTextColor(0x55555);
+			}
+			else{
+			     pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetSelectionMark(),5,_T("失败"));
+				 pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetTextColor(0x10);
+			}
+	
+	return 0;
+}
+void CMainFrame::OnReadmet()
+{
+	// TODO: 在此添加命令处理程序代码
+	CMainFrame * pMain = (CMainFrame*)AfxGetApp()->GetMainWnd();
+	CString strMessageAddress;
+	pMain->m_bCommunictStop = false;
+	if (pMain->m_bConnected == TRUE)
+	{
+		m_hThreadsend=CreateThread (NULL,0,ThreadSendbufRead,this,0,NULL);
+		CloseHandle(m_hThreadsend);
+	}
+	else
+	{
+		AfxMessageBox(_T("请打开串口！"));
+	}
 }

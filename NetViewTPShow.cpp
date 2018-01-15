@@ -186,7 +186,7 @@ DWORD WINAPI ThreadSendTP_10F21 (PVOID pParam) //»ñÈ¡ÍØÆËÍ¼CKQ2017
 				pView->SetTPdataToAccess_10F21(strAllTPdata);
 				pView->GetPointCoordinate();
 				pMain->mm_FrameShowWndTree.InsertItemToTreeList(_T("TPShow"));
-
+				pMain->InsertItemToOnlineList(_T("TPShow"));
 				//	CString strMAC = _T("") , strWhere = _T("");
 				//	CString strNumb , strSTAMsg[1024] , strlist[10];
 				//	int nlistNumb = 0 , nlistUN = 0 , nInNetNumb = 0 , nUnNetNumb = 0 , nLostNumb = 0 , nUnWhiteNumb = 0;
@@ -1193,6 +1193,9 @@ void CNetViewTPShow::SetTPdataToAccess_10F21(CString strTPdata)
 		strRole = strTPdata.Mid(20 , 2);
 		if(tools._str16tostr10(strRole.Mid(0 ,1))=="4"){
 			str.Format(_T("%d"),2); 
+		}
+		else if(tools._str16tostr10(strRole.Mid(0 ,1))=="2"){
+			str.Format(_T("%d"),6); 
 		}
 		else {
 		    str.Format(_T("%d"),_ttoi(tools._str16tostr10(strRole.Mid(0 ,1)))+3); 
