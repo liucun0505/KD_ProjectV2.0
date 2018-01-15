@@ -371,5 +371,9 @@ public:
 //	afx_msg void OnIdrRbmenuMeterr();
 	afx_msg void OnAddmetmsg();
 	afx_msg void OnReadmet();
+	afx_msg void OnAddnodemsg();
+	afx_msg void OnDelnodemsg();
+	afx_msg void OnCopymac();
+	afx_msg void OnReboot();
 };
 

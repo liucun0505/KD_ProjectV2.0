@@ -55,6 +55,10 @@ BEGIN_MESSAGE_MAP(CMainFrame, CMDIFrameWndEx)
 	ON_WM_CLOSE()
 	ON_COMMAND(ID_ADDMETMSG, &CMainFrame::OnAddmetmsg)
 	ON_COMMAND(ID_READMET, &CMainFrame::OnReadmet)
+	ON_COMMAND(ID_ADDNODEMSG, &CMainFrame::OnAddnodemsg)
+	ON_COMMAND(ID_DELNODEMSG, &CMainFrame::OnDelnodemsg)
+	ON_COMMAND(ID_COPYMAC, &CMainFrame::OnCopymac)
+	ON_COMMAND(ID_REBOOT, &CMainFrame::OnReboot)
 END_MESSAGE_MAP()
 
 
@@ -1069,19 +1073,31 @@ DWORD WINAPI ThreadSendbufRead (PVOID pParam)
 	sPartQGDW376_2CreatFrame ptSendQGDW376_2;
 	sPartQGDW376_2DeCodeFrame ptRecvQGDWF0376_2;
 	sPartQGDW376_2DeCodeFrame ptRecvQGDW376_2;
-
+	INT8U vSrcBuf[200];
+	INT16U vSrcLen=0;
 	CString NodeMAC,NodeTEI,NodeTYPE;
 	INT8U Sendbufdata[2000] ,AddrBuf[7],TEIBuf[2];
 	INT16U Sendbuflen = 0,temp16 = 0,teilen;
 	INT8U ack = -1;
-     //抄读
-			NodeMAC=pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetItemText(pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetSelectionMark(),1);
-			NodeTEI=pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetItemText(pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetSelectionMark(),2);
-			NodeTYPE=pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetItemText(pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetSelectionMark(),3);
-			if(NodeMAC==""||NodeTEI==""){
-				AfxMessageBox(_T("未选中节点"));
-				return 0;
-			}
+	int nSelect = pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetSelectedCount();
+	if (nSelect == 0) 
+	{ 
+
+		AfxMessageBox(_T("未选中节点"));
+		return 0;
+
+	} 
+
+	POSITION pos = pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetFirstSelectedItemPosition(); 
+    while (nSelect) 
+    { 
+
+		int nItem = pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetNextSelectedItem(pos); 
+
+			NodeMAC=pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetItemText(nItem,1);
+			NodeTEI=pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetItemText(nItem,2);
+			NodeTYPE=pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetItemText(nItem,3);
+
 			pMain->m_tools._str16tobuf16(NodeMAC , AddrBuf , temp16 , true);//小端模式
 			pMain->m_tools._str16tobuf16(NodeTEI , TEIBuf , teilen , true);
 			if(pMain->i_Threadsend==1){
@@ -1091,14 +1107,91 @@ DWORD WINAPI ThreadSendbufRead (PVOID pParam)
 				if(ack == DACK_SUCESS)
 				{
 				
-					pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetSelectionMark(),5,_T("成功"));
+					pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(nItem,5,_T("成功"));
 					pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetTextColor(0x55555);
 				}
 				else{
-						pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetSelectionMark(),5,_T("失败"));
+						pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(nItem,5,_T("失败"));
 						pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetTextColor(0x10);
 				}
 			}
+			else if(pMain->i_Threadsend==4){
+
+				vSrcBuf[0]=0x01;
+				pMain->m_tools._str16tobuf16(NodeMAC , &vSrcBuf[1] , temp16 , true);//小端模式
+				vSrcBuf[7]=0x02;
+				vSrcLen=8;
+				ack =pMain->MainFSimJzq.HostSendRcv376_2Buf(AFN11,F1,vSrcBuf,vSrcLen,ptSendQGDW376_2,ptRecvQGDWF0376_2);
+				if(ptSendQGDW376_2.s_head.s_Msg_Seq == ptRecvQGDWF0376_2.s_head.s_Msg_Seq)
+				{
+					if((ptRecvQGDWF0376_2.s_head.s_AFN == 0x00) &&(ptRecvQGDWF0376_2.s_head.s_FN == F1))
+					{
+						ack = DACK_SUCESS;
+						pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(nItem,5,_T("成功"));
+					}
+					else if((ptRecvQGDWF0376_2.s_head.s_AFN == 0x00) &&(ptRecvQGDWF0376_2.s_head.s_FN == F2))
+					{
+						ack =ptRecvQGDWF0376_2.s_RcvDataBuf[0];
+						pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(nItem,5,_T("失败"));
+					}
+
+					else
+					{
+						pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(nItem,5,_T("失败"));
+						ack = DACK_FAILURE;
+					}
+				}
+				else
+				{
+					pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(nItem,5,_T("失败"));
+					ack = DACK_EER_SEQERR;
+				}     
+			}
+			else if(pMain->i_Threadsend==5){
+				vSrcBuf[0]=0x01;
+				pMain->m_tools._str16tobuf16(NodeMAC , &vSrcBuf[1] , temp16 , true);//小端模式
+				vSrcLen=7;
+				ack =pMain->MainFSimJzq.HostSendRcv376_2Buf(AFN11,F2,vSrcBuf,vSrcLen,ptSendQGDW376_2,ptRecvQGDWF0376_2);
+				if(ptSendQGDW376_2.s_head.s_Msg_Seq == ptRecvQGDWF0376_2.s_head.s_Msg_Seq)
+				{
+					if((ptRecvQGDWF0376_2.s_head.s_AFN == 0x00) &&(ptRecvQGDWF0376_2.s_head.s_FN == F1))
+					{
+						ack = DACK_SUCESS;
+						pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(nItem,5,_T("成功"));
+					}
+					else if((ptRecvQGDWF0376_2.s_head.s_AFN == 0x00) &&(ptRecvQGDWF0376_2.s_head.s_FN == F2))
+					{
+						ack =ptRecvQGDWF0376_2.s_RcvDataBuf[0];
+						pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(nItem,5,_T("失败"));
+					}
+
+					else
+					{
+						pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(nItem,5,_T("失败"));
+						ack = DACK_FAILURE;
+					}
+				}
+				else
+				{
+					pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(nItem,5,_T("失败"));
+					ack = DACK_EER_SEQERR;
+				}     
+			}
+			else if(pMain->i_Threadsend==7){
+				ack =pMain->MainFSimJzq.HostSendRcv376_2NoBuf_NoAck(0x01,(INT16U)F2);
+				if(ack==DACK_SUCESS){
+					pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(nItem,5,_T("参数初始化成功"));
+				}
+				else{
+					pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(nItem,5,_T("参数初始化失败"));
+				}
+			}
+
+		nSelect--;
+
+    } 
+
+
 	
 	return 0;
 }
@@ -1111,6 +1204,104 @@ void CMainFrame::OnReadmet()
 	if (pMain->m_bConnected == TRUE)
 	{
 		i_Threadsend=1;
+		m_hThreadsend=CreateThread (NULL,0,ThreadSendbufRead,this,0,NULL);
+		CloseHandle(m_hThreadsend);
+	}
+	else
+	{
+		AfxMessageBox(_T("请打开串口！"));
+	}
+}
+
+
+void CMainFrame::OnAddnodemsg()
+{
+	// TODO: 在此添加命令处理程序代码
+		CMainFrame * pMain = (CMainFrame*)AfxGetApp()->GetMainWnd();
+	CString strMessageAddress;
+	pMain->m_bCommunictStop = false;
+	if (pMain->m_bConnected == TRUE)
+	{
+		i_Threadsend=4;
+		m_hThreadsend=CreateThread (NULL,0,ThreadSendbufRead,this,0,NULL);
+		CloseHandle(m_hThreadsend);
+	}
+	else
+	{
+		AfxMessageBox(_T("请打开串口！"));
+	}
+}
+
+
+void CMainFrame::OnDelnodemsg()
+{
+	// TODO: 在此添加命令处理程序代码
+		CMainFrame * pMain = (CMainFrame*)AfxGetApp()->GetMainWnd();
+	CString strMessageAddress;
+	pMain->m_bCommunictStop = false;
+	if (pMain->m_bConnected == TRUE)
+	{
+		i_Threadsend=5;
+		m_hThreadsend=CreateThread (NULL,0,ThreadSendbufRead,this,0,NULL);
+		CloseHandle(m_hThreadsend);
+	}
+	else
+	{
+		AfxMessageBox(_T("请打开串口！"));
+	}
+}
+
+
+void CMainFrame::OnCopymac()
+{
+	// TODO: 在此添加命令处理程序代码
+	int nSelect = m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetSelectedCount();
+	if (nSelect == 0) 
+	{ 
+
+		AfxMessageBox(_T("未选中节点"));
+		return ;
+
+	} 
+	CString strCopy=_T("");
+	POSITION pos = m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetFirstSelectedItemPosition(); 
+    while (nSelect) 
+    { 
+		int nItem = m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetNextSelectedItem(pos); 
+		strCopy+= m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetItemText (nItem , 1)+_T("\r\n");
+		nSelect--;
+	}
+
+	if (strCopy == "")
+	{
+		return;
+	}
+	CStringA strA;
+	strA = strCopy;
+	if(OpenClipboard())   
+	{   
+		HGLOBAL   clipbuffer;   
+		char   *   buffer;   
+		EmptyClipboard();   
+		clipbuffer   =   GlobalAlloc(GMEM_DDESHARE,   strA.GetLength()+1);   
+		buffer   =   (char*)GlobalLock(clipbuffer);   
+		strcpy(buffer, (LPSTR)(LPCSTR)strA);
+		GlobalUnlock(clipbuffer);   
+		SetClipboardData(CF_TEXT,clipbuffer);   
+		CloseClipboard();   
+	}
+}
+
+
+void CMainFrame::OnReboot()
+{
+	// TODO: 在此添加命令处理程序代码
+			CMainFrame * pMain = (CMainFrame*)AfxGetApp()->GetMainWnd();
+	CString strMessageAddress;
+	pMain->m_bCommunictStop = false;
+	if (pMain->m_bConnected == TRUE)
+	{
+		i_Threadsend=7;
 		m_hThreadsend=CreateThread (NULL,0,ThreadSendbufRead,this,0,NULL);
 		CloseHandle(m_hThreadsend);
 	}
