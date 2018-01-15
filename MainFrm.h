@@ -375,5 +375,6 @@ public:
 	afx_msg void OnDelnodemsg();
 	afx_msg void OnCopymac();
 	afx_msg void OnReboot();
+	afx_msg void OnDelmetmsg();
 };
 

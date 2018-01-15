@@ -59,6 +59,7 @@ BEGIN_MESSAGE_MAP(CMainFrame, CMDIFrameWndEx)
 	ON_COMMAND(ID_DELNODEMSG, &CMainFrame::OnDelnodemsg)
 	ON_COMMAND(ID_COPYMAC, &CMainFrame::OnCopymac)
 	ON_COMMAND(ID_REBOOT, &CMainFrame::OnReboot)
+	ON_COMMAND(ID_DELMETMSG, &CMainFrame::OnDelmetmsg)
 END_MESSAGE_MAP()
 
 
@@ -1296,7 +1297,7 @@ void CMainFrame::OnCopymac()
 void CMainFrame::OnReboot()
 {
 	// TODO: 在此添加命令处理程序代码
-			CMainFrame * pMain = (CMainFrame*)AfxGetApp()->GetMainWnd();
+	CMainFrame * pMain = (CMainFrame*)AfxGetApp()->GetMainWnd();
 	CString strMessageAddress;
 	pMain->m_bCommunictStop = false;
 	if (pMain->m_bConnected == TRUE)
@@ -1308,5 +1309,26 @@ void CMainFrame::OnReboot()
 	else
 	{
 		AfxMessageBox(_T("请打开串口！"));
+	}
+}
+
+
+void CMainFrame::OnDelmetmsg()
+{
+	// TODO: 在此添加命令处理程序代码
+	int nSelect = m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetSelectedCount();
+	if (nSelect == 0) 
+	{ 
+
+		AfxMessageBox(_T("未选中节点"));
+		return ;
+
+	} 
+	POSITION pos = m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetFirstSelectedItemPosition(); 
+    while (pos) 
+    { 
+		int nItem = m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetNextSelectedItem(pos); 
+		m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.DeleteItem(nItem);
+		pos = m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetFirstSelectedItemPosition();
 	}
 }

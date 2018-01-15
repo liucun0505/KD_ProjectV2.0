@@ -1,23 +1,67 @@
-﻿生成启动时间为 18.1.15 17:12:45。
+﻿生成启动时间为 18.1.15 17:16:57。
      1>项目“D:\抄控器2.0程序\KD_ProjectV2.0_180104\KD_ProjectV2.0\KD_Project.vcxproj”在节点 2 上(build 个目标)。
        项目文件包含 ToolsVersion="12.0"。此工具集可能未知或缺失。在这种情况下，通过安装 MSBuild 的正确版本，或许可以解决此问题。否则，该 build 可能已因策略原因而被强制为某个特定 ToolsVersion。将该项目视为其已具有 ToolsVersion="4.0"。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=291333。
      1>InitializeBuildStatus:
          正在创建“CSG_Debug\KD_Project.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
          所有输出均为最新。
-         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _STD_CSG /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MT /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"CSG_Debug\KD_Project.pch" /Fo"CSG_Debug\\" /Fd"CSG_Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt MainFrm.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _STD_CSG /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MT /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"CSG_Debug\KD_Project.pch" /Fo"CSG_Debug\\" /Fd"CSG_Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt CKQ2017.cpp CKQTabViewTPshow.cpp CKQViewConfig.cpp CKQViewTPShowOldData.cpp CKQViewTabErrMet.cpp CKQViewTabErrMod.cpp CKQViewUpdata.cpp CSG13762.cpp ChildFrm.cpp DisplayData.cpp Dlg13762UpdataConfig.cpp DlgAddress.cpp DlgCCOTPchange.cpp DlgConnection.cpp DlgExtStaDevStatus.cpp DlgExtStaVersion.cpp DlgSaveDebugInfo.cpp DlgSaveNodeInfo.cpp DlgSelect.cpp DlgTongJiNode.cpp DlgXYData.cpp FView3762.cpp Form698.cpp FormTabView1.cpp Frame3762.cpp FrameSetNet.cpp GW13762.cpp KD_Project.cpp LogFile.cpp MSDU2017.cpp MainFrm.cpp MidNetForm.cpp MyFrameMsgTabCtrl.cpp NetViewPToP.cpp NetViewTPShow.cpp RightTabView.cpp SetWriteDataDlg.cpp SimJZQ.cpp SimMeter.cpp TongJNodeDialog.cpp View698.cpp ViewLetTree.cpp m_FrameShowWndTree.cpp
          MainFrm.cpp
      1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(5): warning C4627: “#include <WinSock2.h>”: 在查找预编译头使用时跳过
                  将指令添加到“StdAfx.h”或重新生成预编译头
-     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(584): warning C4244: “=”: 从“long”转换到“BYTE”，可能丢失数据
      1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(585): warning C4244: “=”: 从“long”转换到“BYTE”，可能丢失数据
      1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(586): warning C4244: “=”: 从“long”转换到“BYTE”，可能丢失数据
-     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(915): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(587): warning C4244: “=”: 从“long”转换到“BYTE”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(916): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  d:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : 参见“strcpy”的声明
-     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(1079): warning C4101: “Sendbufdata”: 未引用的局部变量
-     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(1075): warning C4101: “ptRecvQGDW376_2”: 未引用的局部变量
-     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(1288): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(1080): warning C4101: “Sendbufdata”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(1076): warning C4101: “ptRecvQGDW376_2”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(1289): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  d:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : 参见“strcpy”的声明
+         正在生成代码...
+         正在跳过...(未检测到相关更改)
+         m_FrameShowWndTree.cpp
+         ViewLetTree.cpp
+         View698.cpp
+         TongJNodeDialog.cpp
+         SimMeter.cpp
+         SimJZQ.cpp
+         SetWriteDataDlg.cpp
+         RightTabView.cpp
+         NetViewTPShow.cpp
+         NetViewPToP.cpp
+         MyFrameMsgTabCtrl.cpp
+         MidNetForm.cpp
+         MSDU2017.cpp
+         LogFile.cpp
+         KD_Project.cpp
+         GW13762.cpp
+         FrameSetNet.cpp
+         Frame3762.cpp
+         FormTabView1.cpp
+         Form698.cpp
+         FView3762.cpp
+         DlgXYData.cpp
+         DlgTongJiNode.cpp
+         DlgSelect.cpp
+         DlgSaveNodeInfo.cpp
+         DlgSaveDebugInfo.cpp
+         DlgExtStaVersion.cpp
+         DlgExtStaDevStatus.cpp
+         DlgConnection.cpp
+         DlgCCOTPchange.cpp
+         DlgAddress.cpp
+         Dlg13762UpdataConfig.cpp
+         DisplayData.cpp
+         ChildFrm.cpp
+         CSG13762.cpp
+         CKQViewUpdata.cpp
+         CKQViewTabErrMod.cpp
+         CKQViewTabErrMet.cpp
+         CKQViewTPShowOldData.cpp
+         CKQViewConfig.cpp
+         CKQTabViewTPshow.cpp
+         CKQ2017.cpp
        ResourceCompile:
          所有输出均为最新。
        ManifestResourceCompile:
@@ -116,4 +160,4 @@
 
 生成成功。
 
-已用时间 00:00:00.79
+已用时间 00:00:00.77
