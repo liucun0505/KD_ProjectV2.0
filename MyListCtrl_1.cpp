@@ -78,8 +78,8 @@ void MyListCtrl_1::DrawItem(LPDRAWITEMSTRUCT lpDIS)
 	else 
 	{ 
 		CString str = _T("");
-			str = GetItemText(lpDIS->itemID,1);
-			pDC->SetTextColor(0x792355);
+		str = GetItemText(lpDIS->itemID,1);
+		pDC->SetTextColor(0x792355);
 		
 	} 
 		//ÉèÖÃ×ÖÌåÑÕÉ« 

@@ -1107,13 +1107,14 @@ DWORD WINAPI ThreadSendbufRead (PVOID pParam)
 				ack=pMain->MainFSimJzq.ReadMeterAndCmpMter(1,AddrBuf,0x00010000,ptSendQGDW376_2,ptRecvQGDWF0376_2);
 				if(ack == DACK_SUCESS)
 				{
-				
 					pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(nItem,5,_T("³É¹¦"));
-					pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetTextColor(0x55555);
+		pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.EnsureVisible(nItem,FALSE);
+	pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.RedrawItems(nItem,nItem);
 				}
 				else{
 						pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(nItem,5,_T("Ê§°Ü"));
-						pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetTextColor(0x10);
+								pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.EnsureVisible(nItem,FALSE);
+	pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.RedrawItems(nItem,nItem);
 				}
 			}
 			else if(pMain->i_Threadsend==4){
