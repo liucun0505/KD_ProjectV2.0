@@ -61,11 +61,13 @@ int CMyFrameMsgTabCtrl::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 	m_ctrlMssage.Create(WS_CHILD|WS_VISIBLE|WS_BORDER|LVS_REPORT|LVS_OWNERDRAWFIXED,rectDummy,this,IDD_MYLISTCTRL_1);
 	m_ctrlMssage.InsertColumn(0,_T("序号"),LVCFMT_LEFT,60);
-	m_ctrlMssage.InsertColumn(1,_T("电表号"),LVCFMT_LEFT,250);
+	m_ctrlMssage.InsertColumn(1,_T("电表号"),LVCFMT_LEFT,200);
 	m_ctrlMssage.InsertColumn(2,_T("TEI号"),LVCFMT_CENTER,100);
-	m_ctrlMssage.InsertColumn(3,_T("协议类型"),LVCFMT_CENTER,150);
-	m_ctrlMssage.InsertColumn(4,_T("正向有功总电能"),LVCFMT_CENTER,300);
+	m_ctrlMssage.InsertColumn(3,_T("代理TEI号"),LVCFMT_CENTER,100);
+	m_ctrlMssage.InsertColumn(4,_T("角色"),LVCFMT_CENTER,150);
 	m_ctrlMssage.InsertColumn(5,_T("结果"),LVCFMT_CENTER,200);
+	m_ctrlMssage.InsertColumn(6,_T("协议类型"),LVCFMT_CENTER,100);
+	m_ctrlMssage.InsertColumn(7,_T("获取的从节点信息"),LVCFMT_CENTER,300);
 	m_ctrlMssage.SetExtendedStyle(LVS_EX_FULLROWSELECT|LVS_EX_GRIDLINES);
 	//m_ctrlMssage.m_nChooseList = 0;
 

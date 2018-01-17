@@ -60,6 +60,7 @@ BEGIN_MESSAGE_MAP(CMainFrame, CMDIFrameWndEx)
 	ON_COMMAND(ID_COPYMAC, &CMainFrame::OnCopymac)
 	ON_COMMAND(ID_REBOOT, &CMainFrame::OnReboot)
 	ON_COMMAND(ID_DELMETMSG, &CMainFrame::OnDelmetmsg)
+	ON_COMMAND(ID_GETNODE, &CMainFrame::OnGetnode)
 END_MESSAGE_MAP()
 
 
@@ -1044,7 +1045,7 @@ void CMainFrame::InsertItemToOnlineList(CString strTableName)
 	CString f_strDatalist[6][500];
 	int nNumb = 0 , nAlldataNumb;
 	int n = 0 , m = 0 , i = 0;
-	m_access.SelectDataFromTable(m_PeiZhi_db/*_T(".\\配置文件\\HistTPShow.accdb")*/, strTableName , _T("TP_MAC,TP_TEI") ,_T("") ,m_strlist ,nAlldataNumb);
+	m_access.SelectDataFromTable(m_PeiZhi_db/*_T(".\\配置文件\\HistTPShow.accdb")*/, strTableName , _T("TP_MAC,TP_TEI,TP_PTEI,TP_ROLE") ,_T("") ,m_strlist ,nAlldataNumb);
 	if(nAlldataNumb>0){
 		for(n = 0 ; n < nAlldataNumb ; n++)
 		{
@@ -1053,6 +1054,19 @@ void CMainFrame::InsertItemToOnlineList(CString strTableName)
 	        m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.InsertItem(n,str);
 	        m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(n ,1,strAllDatalist[n][0]);
 	        m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(n ,2,strAllDatalist[n][1]); 
+			m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(n ,3,strAllDatalist[n][2]);
+			if(strAllDatalist[n][3]==_T("2")){
+				m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(n ,3,_T("CCO"));
+			}
+			else if(strAllDatalist[n][3]==_T("4")){
+				m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(n ,3,_T("STA"));
+			}
+			else if(strAllDatalist[n][3]==_T("6")){
+				m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(n ,3,_T("PCO"));
+			}
+			else{
+				m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(n ,3,_T("未知角色"));
+			}
 		}
 	}
 
@@ -1188,6 +1202,19 @@ DWORD WINAPI ThreadSendbufRead (PVOID pParam)
 					pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(nItem,5,_T("参数初始化失败"));
 				}
 			}
+			else if(pMain->i_Threadsend==8){
+				//ack =pMain->MainFSimJzq.HostSendRcv376_2NoBuf_NoAck(0x01,(INT16U)F2);
+				//if(ack==DACK_SUCESS){
+				//	pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(nItem,5,_T("参数初始化成功"));
+				//}
+				//else{
+				//	pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(nItem,5,_T("参数初始化失败"));
+				//}
+	/*			ack =pMain->MainFSimJzq.HostSendRcv376_2NoBuf_NoAck(0x10,(INT16U)F1);
+				temp16_Node = ptRecvQGDW376_2.s_RcvDataBuf[1] << 8 | ptRecvQGDW376_2.s_RcvDataBuf[0];*/
+
+			}
+
 
 		nSelect--;
 
@@ -1219,7 +1246,7 @@ void CMainFrame::OnReadmet()
 void CMainFrame::OnAddnodemsg()
 {
 	// TODO: 在此添加命令处理程序代码
-		CMainFrame * pMain = (CMainFrame*)AfxGetApp()->GetMainWnd();
+	CMainFrame * pMain = (CMainFrame*)AfxGetApp()->GetMainWnd();
 	CString strMessageAddress;
 	pMain->m_bCommunictStop = false;
 	if (pMain->m_bConnected == TRUE)
@@ -1332,4 +1359,86 @@ void CMainFrame::OnDelmetmsg()
 		m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.DeleteItem(nItem);
 		pos = m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetFirstSelectedItemPosition();
 	}
+}
+
+
+void CMainFrame::OnGetnode()
+{
+	CMainFrame * pMain = (CMainFrame*)AfxGetApp()->GetMainWnd();
+	CString strMessageAddress;
+	pMain->m_bCommunictStop = false;
+	if (pMain->m_bConnected == TRUE)
+	{
+		i_Threadsend=8;
+		m_hThreadsend=CreateThread (NULL,0,ThreadSendbufRead,this,0,NULL);
+		CloseHandle(m_hThreadsend);
+	}
+	else
+	{
+		AfxMessageBox(_T("请打开串口！"));
+	}
+	//INT16U u16BeginNumb = 0;
+	//INT8U SendDatabuf[10];
+	//INT8U ack = 0 , u8SendAFN = 0 ,AddrBuf[7] , u8ReadCount = 0;
+	//INT16U SendDatalen = 0 ,temp16 = 0;
+	////CString strAllTPdata = _T("");
+	//sPartQGDW376_2CreatFrame ptSendQGDW376_2,sQGDW376_2HostFrame;
+	//sPartQGDW376_2DeCodeFrame ptRecvQGDW376_2,sRecv376_2HostFrame;
+	// //TODO: 在此添加命令处理程序代码
+	//				INT16U u16BeginNumb_Node = 1;
+	//				INT8U u8ReadCount_Node = 0 , n = 0 , temp8 = 0;
+	//				INT16U temp16_Node = 0 , u16Numb = 0;
+	//				CString strMAC = _T("") , strWhere = _T("");
+	//				CString strNumb , strSTAMsg[1024] , strlist[10];
+	//				int nlistNumb = 0 , nlistUN = 0 , nInNetNumb = 0 , nUnNetNumb = 0 , nLostNumb = 0 , nUnWhiteNumb = 0;
+	//				
+	//                m_tools._str16tobuf16( m_strMAddress , AddrBuf , temp16_Node , true);
+	//				ack = gSimJzq.HostSendRcv376_2F0F8(AddrBuf , 0x10 , F1 , SendDatabuf , SendDatalen , ptSendQGDW376_2 , ptRecvQGDW376_2 , ptRecvQGDW376_2);
+	//				if (ack != 0) return 0;
+	//				temp16_Node = ptRecvQGDW376_2.s_RcvDataBuf[1] << 8 | ptRecvQGDW376_2.s_RcvDataBuf[0];
+	//				while(temp16_Node)
+	//				{
+	//					u16BeginNumb_Node += u8ReadCount_Node;
+	//					if (temp16_Node >10)
+	//					{
+	//						u8ReadCount_Node = 10;
+	//					}
+	//					else
+	//					{
+	//						u8ReadCount_Node = temp16_Node;
+	//					}
+	//					temp16_Node -= u8ReadCount_Node;
+	//					SendDatalen = 3;
+	//					SendDatabuf[0] = (INT8U)u16BeginNumb_Node;
+	//					SendDatabuf[1] = (INT8U)(u16BeginNumb_Node>>8);
+	//					SendDatabuf[2] = u8ReadCount_Node;
+	//					ack = gSimJzq.HostSendRcv376_2F0F8(AddrBuf , 0x10 , F2 , SendDatabuf , SendDatalen , ptSendQGDW376_2, ptRecvQGDW376_2 , ptRecvQGDW376_2);
+	//					if (ack != 0) return 0;
+
+	//					temp8 = ptRecvQGDW376_2.s_RcvDataBuf[2];
+	//					for (n = 0; n < temp8; n++)
+	//					{
+	//						strMAC = pView->m_tools._buf16tostr16(&ptRecvQGDW376_2.s_RcvDataBuf[3 + 8 * n] , 6 , false , true);
+	//						strWhere = _T("TP_MAC='") + strMAC + _T("'");
+	//						pView->m_access.SelectDataFromTable(pMain->m_PeiZhi_db, _T("TPMODERR") , _T("TP_TEI,TP_ROLE") , strWhere , strSTAMsg , nlistNumb);
+	//						//pView->m_access.SelectDataFromTable(_T(".\\配置文件\\13762Data.accdb") , _T("TPMODERR") , _T("TP_TEI,TP_ROLE") , strWhere , strSTAMsg , nlistNumb);
+	//						if (nlistNumb == 0)
+	//						{
+	//							nUnNetNumb += 1;
+	//							//pView->InsertItemToList(strMAC , _T("无") , _T("未入网") , _T("") , _T("未知") , _T(""));
+
+	//							pView->m_DlgTongJiNode.InsertItemToLostList(strMAC);
+	//						}
+	//						else
+	//						{
+	//							nInNetNumb += 1;
+	//							pView->m_tools.Split(strSTAMsg[0] , _T("$") , strlist , nlistNumb);
+	//							//pView->InsertItemToList(strMAC , strlist[0] , _T("入网") , _T("") , strMAC , strlist[1]);
+	//							pView->m_DlgTongJiNode.InsertItemToOnlineList(strMAC,strlist[0],strMAC, strlist[1]);
+	//							pView->m_access.DelectDataFromTable(pMain->m_PeiZhi_db , _T("TPMODERR") , strWhere);
+	//							//pView->m_access.DelectDataFromTable(_T(".\\配置文件\\13762Data.accdb") , _T("TPMODERR") , strWhere);
+	//						}
+	//					}
+	//				}
+	//				pView->m_nOnlineNumb[5]=nUnNetNumb;
 }
