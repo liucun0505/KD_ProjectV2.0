@@ -69,16 +69,7 @@ void   CMyListCtrl::DrawItem(LPDRAWITEMSTRUCT   lpDIS)
 		switch (m_nChooseList)
 		{
 		case 0://信息
-			//str = GetItemText(lpDIS->itemID,1);
-			str2 = GetItemText(lpDIS->itemID,5);
-			if (str2 == "成功")
-			{
-				pDC->SetTextColor(0x808000);
-			}
-			if (str2 == "失败")
-			{
-				pDC->SetTextColor(0x0000FF);
-			}
+			str = GetItemText(lpDIS->itemID,1);
 			break;
 		case 1://报文
 			str = GetItemText(lpDIS->itemID,1);

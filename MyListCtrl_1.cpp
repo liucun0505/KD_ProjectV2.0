@@ -79,8 +79,7 @@ void MyListCtrl_1::DrawItem(LPDRAWITEMSTRUCT lpDIS)
 	{ 
 		CString str = _T("");
 		str = GetItemText(lpDIS->itemID,1);
-		pDC->SetTextColor(0x792355);
-		
+		pDC->SetTextColor(RGB(0, 0, 255));	
 	} 
 		//设置字体颜色 
 	CString str; 
@@ -101,7 +100,20 @@ void MyListCtrl_1::DrawItem(LPDRAWITEMSTRUCT lpDIS)
 			szText = GetItemText( lpDIS->itemID, i ); 
 			rcItem.left += 5;
 			rcItem.right -= 1; 
-			pDC->DrawText(szText, lstrlen(szText), &rcItem, DT_LEFT|DT_VCENTER|DT_NOPREFIX|DT_SINGLELINE); 
+
+			if(i==4){
+				CString str2 = GetItemText(lpDIS->itemID,5);
+				if (str2 == "成功")
+				{
+					pDC->SetTextColor(RGB(0,255,0));
+				}
+				if (str2 == "失败")
+				{
+					pDC->SetTextColor(0x0000FF);
+				}
+			}
+
+			pDC->DrawText(szText, lstrlen(szText), &rcItem, DT_LEFT|DT_VCENTER|DT_NOPREFIX|DT_SINGLELINE);
 		} 
 	}
 }
