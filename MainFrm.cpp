@@ -1120,7 +1120,7 @@ DWORD WINAPI ThreadSendbufRead (PVOID pParam)
 		}
 	}
 	else if(pMain->i_Threadsend==8){
-		INT16U nSelect = pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetSelectedCount();
+		INT16U nSelect = pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.GetItemCount();
 		for (int k = 0; k < nSelect; k++)
         {
 			pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(k,7,_T(""));
@@ -1130,7 +1130,7 @@ DWORD WINAPI ThreadSendbufRead (PVOID pParam)
 		INT16U u16BeginNumb_Node = 1;
 		INT8U u8ReadCount_Node = 0 , n = 0 , temp8 = 0;
 		INT16U temp16_Node = 0 , u16Numb = 0;
-		ack = pMain->MainFSimJzq.HostSendRcv376_2NoBuf(AFN01,F1,ptSendQGDW376_2,ptRecvQGDW376_2);
+		ack = pMain->MainFSimJzq.HostSendRcv376_2NoBuf(AFN10,F1,ptSendQGDW376_2,ptRecvQGDW376_2);
 		if (ack != 0) return 0;
 		temp16_Node = ptRecvQGDW376_2.s_RcvDataBuf[1] << 8 | ptRecvQGDW376_2.s_RcvDataBuf[0];
 
@@ -1155,14 +1155,15 @@ DWORD WINAPI ThreadSendbufRead (PVOID pParam)
 			vSrcBuf[0] = (INT8U)u16BeginNumb_Node;
 			vSrcBuf[1] = (INT8U)(u16BeginNumb_Node>>8);
 			vSrcBuf[2] = u8ReadCount_Node;
-			ack =pMain->MainFSimJzq.HostSendRcv376_2Buf(AFN10,F2,vSrcBuf,vSrcLen,ptSendQGDW376_2,ptRecvQGDWF0376_2);
+			ack =pMain->MainFSimJzq.HostSendRcv376_2Buf(AFN10,F2,vSrcBuf,vSrcLen,ptSendQGDW376_2,ptRecvQGDW376_2);
 			if (ack != 0) return 0;
 
 			temp8 = ptRecvQGDW376_2.s_RcvDataBuf[2];
-			for (n = 0; n < temp8; n++,NUM++)
+			for (int n = 0; n < temp8; n++,NUM++)
 			{
-				CString strMAC = pMain->m_tools._buf16tostr16(&ptRecvQGDW376_2.s_RcvDataBuf[3 + 8 * n] , 6 , false , true);
-	            pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(NUM,7,strMAC);
+				NodeMAC = pMain->m_tools._buf16tostr16(&ptRecvQGDW376_2.s_RcvDataBuf[3 + 8 * n] , 6 , false , true);
+				//NodeMAC=pMain->m_tools._buf16tostr16(&ptRecvQGDW376_2.s_RcvDataBuf[3] , 6);
+	            pMain->m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(NUM,7,NodeMAC);
 			}
 		}
 
