@@ -103,11 +103,11 @@ void MyListCtrl_1::DrawItem(LPDRAWITEMSTRUCT lpDIS)
 
 			if(i==4){
 				CString str2 = GetItemText(lpDIS->itemID,5);
-				if (str2 == "成功")
+				if (str2 == "成功"||str2 == "参数初始化成功")
 				{
 					pDC->SetTextColor(RGB(0,255,0));
 				}
-				if (str2 == "失败")
+				if (str2 == "失败"||str2 == "参数初始化失败")
 				{
 					pDC->SetTextColor(0x0000FF);
 				}
