@@ -1,12 +1,23 @@
-﻿生成启动时间为 18.1.18 0:36:21。
+﻿生成启动时间为 18.1.18 1:15:13。
      1>项目“D:\抄控器2.0程序\KD_ProjectV2.0_180104\KD_ProjectV2.0\KD_Project.vcxproj”在节点 2 上(build 个目标)。
        项目文件包含 ToolsVersion="12.0"。此工具集可能未知或缺失。在这种情况下，通过安装 MSBuild 的正确版本，或许可以解决此问题。否则，该 build 可能已因策略原因而被强制为某个特定 ToolsVersion。将该项目视为其已具有 ToolsVersion="4.0"。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=291333。
      1>InitializeBuildStatus:
          正在创建“CSG_Debug\KD_Project.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
          所有输出均为最新。
-         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _STD_CSG /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MT /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"CSG_Debug\KD_Project.pch" /Fo"CSG_Debug\\" /Fd"CSG_Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt MyListCtrl_1.cpp
-         MyListCtrl_1.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _STD_CSG /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MT /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"CSG_Debug\KD_Project.pch" /Fo"CSG_Debug\\" /Fd"CSG_Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt MainFrm.cpp
+         MainFrm.cpp
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(5): warning C4627: “#include <WinSock2.h>”: 在查找预编译头使用时跳过
+                 将指令添加到“StdAfx.h”或重新生成预编译头
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(586): warning C4244: “=”: 从“long”转换到“BYTE”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(587): warning C4244: “=”: 从“long”转换到“BYTE”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(588): warning C4244: “=”: 从“long”转换到“BYTE”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(917): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : 参见“strcpy”的声明
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(1151): warning C4244: “=”: 从“INT16U”转换到“INT8U”，可能丢失数据
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(1094): warning C4101: “Sendbufdata”: 未引用的局部变量
+     1>d:\抄控器2.0程序\kd_projectv2.0_180104\kd_projectv2.0\mainfrm.cpp(1375): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : 参见“strcpy”的声明
        ResourceCompile:
          所有输出均为最新。
        ManifestResourceCompile:
@@ -105,4 +116,4 @@
 
 生成成功。
 
-已用时间 00:00:00.59
+已用时间 00:00:01.04
