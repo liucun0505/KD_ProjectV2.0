@@ -1056,16 +1056,16 @@ void CMainFrame::InsertItemToOnlineList(CString strTableName)
 	        m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(n ,2,strAllDatalist[n][1]); 
 			m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(n ,3,strAllDatalist[n][2]);
 			if(strAllDatalist[n][3]==_T("2")){
-				m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(n ,3,_T("CCO"));
+				m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(n ,4,_T("CCO"));
 			}
 			else if(strAllDatalist[n][3]==_T("4")){
-				m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(n ,3,_T("STA"));
+				m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(n ,4,_T("STA"));
 			}
 			else if(strAllDatalist[n][3]==_T("6")){
-				m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(n ,3,_T("PCO"));
+				m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(n ,4,_T("PCO"));
 			}
 			else{
-				m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(n ,3,_T("未知角色"));
+				m_FrameShowWnd.m_myTabCtrl.m_ctrlMssage.SetItemText(n ,4,_T("未知角色"));
 			}
 		}
 	}
