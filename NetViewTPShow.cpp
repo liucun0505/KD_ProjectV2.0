@@ -144,6 +144,7 @@ DWORD WINAPI ThreadSendTP_10F21 (PVOID pParam) //获取拓扑图CKQ2017
 				else{
 					continue;
 				}
+				//temp16_Node=20;
 				while(temp16_Node){
 
 					u16BeginNumb_Node += u8ReadCount_Node;
@@ -169,6 +170,7 @@ DWORD WINAPI ThreadSendTP_10F21 (PVOID pParam) //获取拓扑图CKQ2017
 						  temp16_Node=0;
 						  ack=100;
 					  }
+					 // temp16_Node
 
 				   }
 				   else{
@@ -179,7 +181,7 @@ DWORD WINAPI ThreadSendTP_10F21 (PVOID pParam) //获取拓扑图CKQ2017
 
 				}
 				if(ack==100){
-					continue;
+					//continue;
 				}
 
 				//AfxMessageBox(strAllTPdata);
